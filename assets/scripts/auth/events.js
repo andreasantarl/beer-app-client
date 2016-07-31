@@ -10,31 +10,31 @@ const onSignUp = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signUp(data)
-  .done(ui.success)
-  .fail(ui.failure);
+  .then(ui.success)
+  .catch(error => console.error(error));
 };
 
 const onSignIn = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.signIn(data)
-  .done(ui.signInSuccess)
-  .fail(ui.signInFailure);
+  .then(ui.signInSuccess)
+  .catch(error => console.error(error));
 };
 
 const onSignOut = (event) => {
   event.preventDefault();
   api.signOut()
-  .done(ui.signOutSuccess)
-  .fail(ui.failure);
+  .then(ui.signOutSuccess)
+  .catch(error => console.error(error));
 };
 
 const onChangePassword = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-  .done(ui.changePasswordSuccess)
-  .fail(ui.changePasswordFailure);
+  .then(ui.changePasswordSuccess)
+  .catch(error => console.error(error));
 };
 
 const addHandlers = () => {

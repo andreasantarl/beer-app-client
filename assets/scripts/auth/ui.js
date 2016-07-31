@@ -7,7 +7,8 @@ $("#sign-out").hide();
 $("#changePasswordModalbutton").hide();
 $("#profileModalbutton").hide();
 $("#myNewWorkoutButton").hide();
-$("#workout-information-body").hide();
+$("#my-profile").hide();
+
 
 const success = (data) => {
 //  app.user = data.user; //
@@ -39,10 +40,9 @@ const signInSuccess = (data) => {
   $("#sign-out").show();
   $("#changePasswordModalbutton").show();
   $("#profileModalbutton").show();
-  $("#myNewWorkoutButton").show();
-  $("#workout-information-body").show();
-  $("#workout-information-body").show();
   $("#signUpSignIn").hide();
+  // $("#create-my-profile").hide();
+  $("#my-profile").show();
 
 
 };
