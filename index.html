@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cardio Tracker</title>
+
+    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body >
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="nav navbar-nav">
+        <!-- {{#if isAuthenticated}}
+        <li>{{#link-to "users"}}Users{{/link-to}}</li> -->
+        <!-- <li>{{#link-to "beers"}}Add a beer{{/link-to}}</li> -->
+        <!-- {{/if}} -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><button type="button" id="signUpSignIn" class="btn btn-primary btn-md navButton" data-toggle="modal" data-target="#loginModal">Sign Up/Sign In</button></li>
+        <li><button id="profileModalbutton" type="button" class="btn btn-default btn-md rightNavButton " data-toggle="modal" data-target="#profileModal">My Profile</button></li>
+        <li><button id="changePasswordModalbutton" type="button" class="btn btn-default btn-md rightNavButton" data-toggle="modal" data-target="#changePasswordModal">Change Password</button></li>
+        <li><input class="sign-out btn btn-default btn-md rightNavButton" type="submit" value="Sign Out"></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container-fluid">
+        <div class="row"><h1>Beer Bracket</h1></div>
+  <div class="row modalButtons">
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="loginModalLabel">Sign Up or Sign In</h4>
+          </div>
+          <div class="modal-body">
+
+            <form id="sign-up">
+              <fieldset>
+                <legend>Sign up!</legend>
+                <input class='sign-up-info' type="text" name="credentials[email]" placeholder="Username">
+                <input class='sign-up-info' type="password" name="credentials[password]" placeholder="Password">
+                <input class='sign-up-info' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                <input class="btn btn-primary btn-med" type="submit" name="submit" value="Sign up!">
+              </fieldset>
+            </form>
+            <div id="sign-up-message">
+            </div>
+            <br>
+
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign In!</legend>
+                <input class="login-info" type="text" name="credentials[email]" placeholder="Username">
+                <input class="login-info" type="password" name="credentials[password]" placeholder="Password">
+                <input class="btn btn-primary btn-med" type="submit" name="submit" value="Sign In">
+              </fieldset>
+            </form>
+            <div id="sign-in-message">
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rightNav row gutter-5">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 gutter-5"></div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 gutter-5">
+      <!-- <button id="profileModalbutton" type="button" class="btn btn-default btn-md rightNavButton " data-toggle="modal" data-target="#profileModal">
+        My Profile
+      </button> -->
+      <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="profileModalLabel">User profile</h4>
+            </div>
+            <div class="modal-body">
+              <form id="create-profile">
+                <fieldset>
+                  <legend>Create a user profile</legend>
+                  <input type="text" name="profile[first_name]" placeholder="First name">
+                  <input type="text" name="profile[last_name]" placeholder="Last name">
+                  <!-- <input type="hidden" name="user_id"> -->
+                  <input class="btn btn-primary btn-med" type="submit" name="submit" value="Create your profile">
+                </fieldset>
+              </form>
+              <br>
+
+              <form id="update-profile">
+                <fieldset>
+                  <legend>Update your user profile</legend>
+                  <input type="text" name="profile[first_name]" placeholder="First name">
+                  <input type="text" name="profile[last_name]" placeholder="Last name">
+                  <input type="hidden" name="profile[user_id]">
+                  <input class="btn btn-primary btn-med" type="submit" name="submit" value="Update your profile">
+                </fieldset>
+              </form>
+              <div class="content">
+                <form id="show-profile">
+                  <fieldset>
+                    <legend>View your user profile</legend>
+                    <input class="btn btn-primary btn-med" type="submit" name="submit" data-id="" value="View your profile">
+                    <div id="display-profile"></div>
+                  </fieldset>
+                </form>
+                <br>
+                <div id="view-profile">
+                </div>
+              </div>
+            </div>
+                  <div class="modal-footer">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 gutter-5">
+        <!-- <button id="changePasswordModalbutton" type="button" class="btn btn-default btn-md rightNavButton" data-toggle="modal" data-target="#changePasswordModal">
+          Change Password
+        </button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="myChangePasswordModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="changePasswordModalLabel">Change Password</h4>
+              </div>
+              <div class="modal-body">
+                <form id="change-password">
+                  <fieldset>
+                    <legend>Change Password!</legend>
+                    <input class='password-info' type="password" name="passwords[old]" placeholder="Current Password">
+                    <input class='password-info' type="password" name="passwords[new]" placeholder="New Password">
+                    <input type="submit" name="submit" value="Change Password">
+                  </fieldset>
+                </form>
+              </div>
+              <div id="change-password-message">
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 gutter-5">
+        <form id="sign-out">
+          <fieldset>
+          <!-- <legend>Sign Out!</legend> -->
+            <!-- <input class="sign-out btn btn-default btn-md rightNavButton" type="submit" value="Sign Out"> -->
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
