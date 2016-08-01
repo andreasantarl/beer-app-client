@@ -6,38 +6,26 @@ const profileTemplate = require('./../templates/view_my_profile_form.handlebars'
 const profileEditTemplate = require('./../templates/edit_profile_form.handlebars');
 
 const createMyProfileSuccess = (data) => {
-  // console.log(data);
-    app.profile = data;
-    app.userProfileId = data.profile.id;
   console.log(data);
+    // app.profile = data;
+    app.user.userProfileId = data.profile.id;
+  console.log(app.user.userProfileId);
 };
 
 const showMyProfileSuccess = (data) => {
-  // $("#create-my-profile").hide();
-  // $("#view-profile-section").show();
-  $('#view-profile').html(profileTemplate(data.profile));
-  // $('#edit-profile-button').on('click', onEditWorkout);
+  console.log(data);
+  // app.user.profile.userProfileId = data.profile.id;
+  $('#handlebars').html(profileTemplate(data.profile));
 };
 
 const showProfileForEdit = (data) => {
-  // console.log("hello");
-  // console.log(data.profile);
-  // $("#view-profile-section").hide();
-  // $('#edit-profile').html(profileEditTemplate(data.profile));
    $('#handlebars').html(profileEditTemplate(data.profile));
-  // $('.workout-display').on('submit', onEditWorkout);
 };
 
 const updateMyProfileSuccess = () => {
   // $('#edit-profile').hide();
 };
 
-// const showProfileForEditSuccess = (data) => {
-//   $("#create-my-profile").hide();
-//   $("#view-profile").hide();
-//   $('#edit-profile').html(profileEditTemplate(data.profile));
-//   // $('.workout-display').on('submit', onEditWorkout);
-// };
 
 module.exports = {
   createMyProfileSuccess,

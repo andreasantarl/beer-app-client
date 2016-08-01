@@ -1,44 +1,12 @@
-  <form class="profile-display">
-    <fieldset class="form-group">
-        <div class="table-responsive">
-          <table class="table table-condensed table-bordered profile-table">
-            <tr>
-              <td><h3>
-                {{username}}
-              </h3>
-              </td>
-            </tr>
-            <tr class="justify-items">
-              <td style="padding: 0 50px;">
-                <h4>{{first_name}} {{last_name}}</h4>
-              </td>
-            </tr>
-            <tr class="justify-items">
-              <td style="padding-left: 50px; padding-right: 50px;">
-                <p>Biography: {{biography}}</p>
-              </td>
-            </tr>
-            <tr class="justify-items">
-              <td style="padding-left: 50px; padding-right: 50px;">
-                Beer preferences: {{preferences}}
-              </td>
-            </tr>
-            <tr class="justify-items">
-              <td style="padding-left: 50px; padding-right: 50px;">
-                Beer favorites: {{favorites}}
-              </td>
-            </tr>
-            <tr class="justify-items">
-              <td style="padding-left: 50px; padding-right: 50px;">
-                Photo: {{photo}}
-              </td>
-            </tr>
-          </table>
-        </div>
+  <div class="profile-display">
+    <h3>
+      {{username}}
+    </h3>
+      <h4>{{first_name}} {{last_name}}</h4>
+      <p>Biography: {{biography}}</p>
+      Beer preferences: {{preferences}}
+      Beer favorites: {{favorites}}
+      Photo: {{photo}}
+      <input type=hidden value="{{id}}" id="userProfileId"/>
 
-      </div>
-      <!-- <div class="profileEditButton">
-        <input id="edit-profile-button" type="submit" class="edit-profile btn btn-default" value="Update Profile">
-      </div> -->
-    </fieldset>
-  </form>
+  </div>

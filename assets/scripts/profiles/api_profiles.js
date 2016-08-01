@@ -21,11 +21,11 @@ const createMyProfile = (data) => {
   });
 };
 
-const showMyProfile = () => {
-  console.log(app);
+const showMyProfile = (profileId) => {
+  console.log(app.user);
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: app.host + '/profiles/' + app.userProfileId,
+      url: app.host + '/profiles/' + profileId,
       method: 'GET',
       headers: {
         Authorization: 'Token token=' + app.user.token,

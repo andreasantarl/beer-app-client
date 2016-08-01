@@ -8,20 +8,21 @@ const api = require('./api_profiles');
 const ui = require('./ui_profiles');
 const app = require('../app.js');
 
+const onShowMyProfile = () => {
+  // let profileId = app.user.profile.id;
+  let profileId = $('#userProfileId').val();
+  return api.showMyProfile(profileId)
+    .then(ui.showMyProfileSuccess)
+    .catch(error => console.error(error));
+};
+
 const onCreateMyProfile = (event) => {
-  // $("#view-profile-section").hide();
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createMyProfile(data)
   .then(ui.createMyProfileSuccess)
+  .then(onShowMyProfile)
   .catch(error => console.error(error));
-};
-
-const onShowMyProfile = () => {
-  // $("#view-profile-section").show();
-  return api.showMyProfile()
-    .then(ui.showMyProfileSuccess)
-    .catch(error => console.error(error));
 };
 
 
@@ -35,40 +36,22 @@ const onUpdateMyProfile = (event) => {
 };
 
 const onLoadMyProfile = (event) => {
-  // $('#view-profile').hide();
-  // $("#edit-profile-section").show();
   event.preventDefault();
   return api.showMyProfile()
     .then(ui.showProfileForEdit)
     .catch(error => console.error(error));
-  // .catch(error => console.error(error));
-  // $('#update-profile').on('submit', onUpdateMyProfile);
 };
 
 const displayProfileForm = (event) => {
   event.preventDefault();
   $('#handlebars').html(profileCreateTemplate());
   $('#create-my-profile').on('submit', onCreateMyProfile);
-  // $('#create-my-profile').show('slow');
-  // $('#view-profile-section').hide('slow');
 };
 
 const profileHandlers = () => {
   $('#my-profile').on('click', displayProfileForm);
-  // function(event) {
-  //   event.preventDefault();
-  //     $('#handlebars').html(profileCreateTemplate());
-  //   // $('#create-my-profile').show('slow');
-  //   // $('#view-profile-section').hide('slow');
-  // });
   $('#edit-my-profile-form').on('submit', onUpdateMyProfile);
   $('#view-my-profile').on('click', onShowMyProfile);
-  // $('#view-my-profile').on('click', function(event) {
-  //   event.preventDefault();
-  //   $('#create-my-profile').hide();
-  //   $('#view-profile-section').show();
-  //   $('#view-profile').show();
-  // });
   $('#edit-profile-button').on('click', onLoadMyProfile);
 };
 

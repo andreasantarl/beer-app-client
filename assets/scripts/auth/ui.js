@@ -37,9 +37,6 @@ const signInSuccess = (data) => {
   $("#my-profile").show();
   $("#profile-dropdown").show();
 
-
-
-
 };
 
 const signOutSuccess = () => {
