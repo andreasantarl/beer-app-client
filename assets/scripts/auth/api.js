@@ -71,10 +71,29 @@ const changePassword = (data) => {
   });
 };
 
+const getUserProfileId = () => {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: app.host + '/users/' + app.user.id,
+      method: 'GET',
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+      success: (response) => {
+        resolve(response);
+      },
+      error: (error) => {
+        reject(error);
+      },
+    });
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  getUserProfileId,
   // setProfile,
 };

@@ -4,27 +4,20 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const api = require('./api_profiles');
 const ui = require('./ui_profiles');
+const app = require('../app.js');
 
 const onCreateMyProfile = (event) => {
-
   event.preventDefault();
   let data = getFormFields(event.target);
-
-  if($('#profile-private').attr('checked')) {
-      data.profiles.profile_private = true;
-  } else {
-      data.profiles.profile_private = false;
-  }
-  console.log(data);
   api.createMyProfile(data)
   .then(ui.createMyProfileSuccess)
-  .catch(error => console.error(error))
+  .catch(error => console.error(error));
 };
 
 const onShowMyProfile = () => {
   return api.showMyProfile()
     .then(ui.showMyProfileSuccess)
-    .catch(error => console.error(error))
+    .catch(error => console.error(error));
 };
 
 const onUpdateMyProfile = (event) => {
@@ -34,7 +27,7 @@ const onUpdateMyProfile = (event) => {
   let data = getFormFields(event.target);
   api.updateMyProfile(data)
   .then(ui.updateMyProfileSuccess)
-  .catch(error => console.error(error))
+  .catch(error => console.error(error));
 };
 
 const profileHandlers = () => {
@@ -44,7 +37,7 @@ const profileHandlers = () => {
   });
   $('#create-my-profile').on('submit', onCreateMyProfile);
   $('#update-profile-form').on('submit', onUpdateMyProfile);
-  $('#show-profile').on('submit', onShowMyProfile);
+  $('#view-my-profile').on('click', onShowMyProfile);
   // $('#open-my-buckets').on('click', onUserBuckets);
   // $('#view-all-user-buckets').on('click', onAllUserBuckets);
 };

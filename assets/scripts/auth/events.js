@@ -19,6 +19,8 @@ const onSignIn = (event) => {
   let data = getFormFields(event.target);
   api.signIn(data)
   .then(ui.signInSuccess)
+  .then(api.getUserProfileId)
+  .then(ui.getUserProfileIdSuccess)
   .catch(error => console.error(error));
 };
 

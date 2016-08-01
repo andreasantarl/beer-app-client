@@ -6,42 +6,34 @@ const app = require('../app.js');
 $("#sign-out").hide();
 $("#changePasswordModalbutton").hide();
 $("#profileModalbutton").hide();
-$("#myNewWorkoutButton").hide();
+// $("#myNewWorkoutButton").hide();
 $("#my-profile").hide();
 
 
 const success = (data) => {
-//  app.user = data.user; //
-  if (data) {
-//    console.log(data);
-  } else {
-//    console.log('Success');
-  }
   $('#sign-up-message').text("Thank you for creating an account!  Please now sign in.");
 };
 
-const failure = (error) => {
-  console.error(error);
-  $('#sign-up-message').text('');
-  $('#sign-up-message').text("Please enter a valid username and/or password.");
+// const failure = (error) => {
+//   console.error(error);
+//   $('#sign-up-message').text('');
+//   $('#sign-up-message').text("Please enter a valid username and/or password.");
+//
+// };
 
-};
-
-const signInFailure = (error) => {
-  console.error(error);
-  $('#sign-in-message').text("Please enter a valid username and/or password");
-
-};
+// const signInFailure = (error) => {
+//   console.error(error);
+//   $('#sign-in-message').text("Please enter a valid username and/or password");
+//
+// };
 
 const signInSuccess = (data) => {
   app.user = data.user;
-//  console.log("App. user is ", app.user);
   $("#loginModal").modal("hide");
   $("#sign-out").show();
   $("#changePasswordModalbutton").show();
   $("#profileModalbutton").show();
   $("#signUpSignIn").hide();
-  // $("#create-my-profile").hide();
   $("#my-profile").show();
 
 
@@ -53,8 +45,8 @@ const signOutSuccess = () => {
   $("#sign-out").hide();
   $("#changePasswordModalbutton").hide();
   $("#profileModalbutton").hide();
-  $("#workout-information-body").hide();
-  $("#myNewWorkoutButton").hide();
+  // $("#workout-information-body").hide();
+  // $("#myNewWorkoutButton").hide();
   $(".login-info").val('');
   $(".sign-up-info").val('');
   $('.ty-msg').remove();
@@ -65,18 +57,24 @@ const changePasswordSuccess = () => {
   $(".password-info").val("");
 };
 
-const changePasswordFailure = (error) => {
-  console.error(error);
-  $('#change-password-message').text("Please enter a valid password");
+// const changePasswordFailure = (error) => {
+//   console.error(error);
+//   $('#change-password-message').text("Please enter a valid password");
+//
+// };
 
+const getUserProfileIdSuccess = (data) => {
+  // console.log(data);
+  app.user.profile = data.user.profile;
 };
 
 module.exports = {
   success,
-  failure,
+  // failure,
   signInSuccess,
-  signInFailure,
+  // signInFailure,
   signOutSuccess,
   changePasswordSuccess,
-  changePasswordFailure,
+  getUserProfileIdSuccess
+  // changePasswordFailure,
 };

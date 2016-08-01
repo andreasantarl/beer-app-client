@@ -21,6 +21,25 @@ const createMyProfile = (data) => {
   });
 };
 
+const showMyProfile = () => {
+  console.log(app);
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: app.host + '/profiles/' + app.user.profile.id,
+      method: 'GET',
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+      success: (response) => {
+        resolve(response);
+      },
+      error: (error) => {
+        reject(error);
+      },
+    });
+  });
+};
+
 const updateMyProfile = (data, id) => {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -40,23 +59,6 @@ const updateMyProfile = (data, id) => {
   });
 };
 
-const showMyProfile = (id) => {
-  return new Promise((resolve, reject) => {
-    $.ajax({
-      url: app.host + '/profiles/' + id,
-      method: 'GET',
-      headers: {
-        Authorization: 'Token token=' + app.user.token,
-      },
-      success: (response) => {
-        resolve(response);
-      },
-      error: (error) => {
-        reject(error);
-      },
-    });
-  });
-};
 
 // const showUserBuckets = () => {
 //   return new Promise((resolve, reject) => {
