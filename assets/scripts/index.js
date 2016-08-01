@@ -14,6 +14,5 @@ const profileEvents = require('./profiles/events_profiles.js');
 $(() => {
   authEvents.addHandlers();
   profileEvents.profileHandlers();
-
   $("#create-my-profile").hide();
 });

@@ -51,6 +51,9 @@ const signOutSuccess = () => {
   $(".sign-up-info").val('');
   $('.ty-msg').remove();
   $("#signUpSignIn").show();
+  $("#create-my-profile").hide();
+  $("#view-profile").hide();
+
 };
 const changePasswordSuccess = () => {
   $("#changePasswordModal").modal("hide");

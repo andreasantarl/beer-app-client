@@ -7,6 +7,7 @@ const ui = require('./ui_profiles');
 const app = require('../app.js');
 
 const onCreateMyProfile = (event) => {
+  $("#view-profile").hide();
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createMyProfile(data)
@@ -15,6 +16,7 @@ const onCreateMyProfile = (event) => {
 };
 
 const onShowMyProfile = () => {
+  $('#view-profile').show();
   return api.showMyProfile()
     .then(ui.showMyProfileSuccess)
     .catch(error => console.error(error));
@@ -34,14 +36,13 @@ const profileHandlers = () => {
   $('#my-profile').on('click', function(event) {
     event.preventDefault();
     $('#create-my-profile').show();
+    $('#view-profile').hide();
   });
   $('#create-my-profile').on('submit', onCreateMyProfile);
   $('#update-profile-form').on('submit', onUpdateMyProfile);
   $('#view-my-profile').on('click', onShowMyProfile);
-  // $('#open-my-buckets').on('click', onUserBuckets);
-  // $('#view-all-user-buckets').on('click', onAllUserBuckets);
 };
-//
+
 module.exports = {
   profileHandlers,
 };
