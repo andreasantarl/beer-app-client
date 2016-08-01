@@ -1,0 +1,14 @@
+<form class="profile-display" id="create-my-profile">
+  <fieldset class="form-group">
+    Username: <input class="form-control" type="text" name=profiles[username] placeholder="Username" value="{{username}}" />
+    First Name: <input class="form-control" type="text" name=profiles[first_name] placeholder="First Name" value="{{first_name}}" />
+    Last Name: <input class="form-control" type="text" name=profiles[last_name] placeholder="Last Name" value="{{last_name}}" />
+    Biography: <input class="form-control" type="text" name=profiles[biography] placeholder="Biography" value="{{biography}}" />
+    Beer preferences: <input class="form-control" type="text" name=profiles[preferences] placeholder="Beer preferences" value="{{preference}}" />
+    Beer favorites: <input class="form-control" type="text" name=profiles[favorites] placeholder="Beer favorites" value="{{favorites}}" />
+    Photo: <input class="form-control" type="file" name=profiles[photo] placeholder="Profile Picture" value="{{photo}}" />
+    Profile private: <input  class="form-control" type="checkbox" name="profiles[make_private]" value="{make_private}" />
+    <!-- <input type="submit"  id="save-profile-button"  class="edit-profile btn btn-default" value="Update"> -->
+    <button type="submit" class="edit-profile btn btn-default">Create Profile</button>
+  </fieldset>
+</form>

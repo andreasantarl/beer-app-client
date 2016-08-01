@@ -2,8 +2,8 @@
 
 const app = require('../app.js');
 const profileTemplate = require('./../templates/view_my_profile_form.handlebars');
-const profileEditTemplate = require('./../templates/edit_my_profile.handlebars');
-
+// const profileEditTemplate = require('./../templates/edit_my_profile.handlebars');
+const profileEditTemplate = require('./../templates/edit_profile_form.handlebars');
 
 const createMyProfileSuccess = (data) => {
   // console.log(data);
@@ -23,7 +23,8 @@ const showProfileForEdit = (data) => {
   // console.log("hello");
   // console.log(data.profile);
   // $("#view-profile-section").hide();
-  $('#edit-profile').html(profileEditTemplate(data.profile));
+  // $('#edit-profile').html(profileEditTemplate(data.profile));
+   $('#handlebars').html(profileEditTemplate(data.profile));
   // $('.workout-display').on('submit', onEditWorkout);
 };
 

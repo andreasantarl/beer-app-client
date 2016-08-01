@@ -1,12 +1,55 @@
-{{#profile}}
-  <form class="profile-display">
+<div id="edit-profile-section">
+  <form class="profile-display" id="edit-my-profile-form">
     <fieldset class="form-group">
       <div class="row">
-        {{> edit_my_profile}}
+        <div class="table-responsive">
+          <table class="table table-condensed table-bordered profile-table">
+            <tr>
+              <td><h3>
+                {{username}}
+              </h3>
+              </td>
+            </tr>
+            <tr class="justify-items">
+              <td style="padding: 0 50px;">
+                First Name: <input class="form-control" type="text" name=profiles[first_name] placeholder="First Name" value="{{first_name}}" />
+              </td>
+            </tr>
+            <tr class="justify-items">
+              <td style="padding: 0 50px;">
+                Last Name: <input class="form-control" type="text" name=profiles[last_name] placeholder="Last Name" value="{{last_name}}" />
+              </td>
+            </tr>
+            <tr class="justify-items">
+              <td style="padding-left: 50px; padding-right: 50px;">
+                Biography: <input class="form-control" type="text" name=profiles[biography] placeholder="Biography" value="{{biography}}" />
+              </td>
+            </tr>
+            <tr class="justify-items">
+              <td style="padding-left: 50px; padding-right: 50px;">
+                Beer preferences: <input class="form-control" type="text" name=profiles[preferences] placeholder="Beer preferences" value="{{preference}}" />
+              </td>
+            </tr>
+            <tr class="justify-items">
+              <td style="padding-left: 50px; padding-right: 50px;">
+                Beer favorites: <input class="form-control" type="text" name=profiles[favorites] placeholder="Beer favorites" value="{{favorites}}" />
+              </td>
+            </tr>
+            <tr class="justify-items">
+              <td style="padding-left: 50px; padding-right: 50px;">
+                Photo: <input class="form-control" type="file" name=profiles[photo] placeholder="Profile Picture" value="{{photo}}" />
+              </td>
+            </tr>
+            <tr class="justify-items">
+              <td style="padding-left: 50px; padding-right: 50px;">
+                Profile private: <input  class="form-control" type="checkbox" name="profiles[make_private]" value="{make_private}" />
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div class="profileEditButton">
-      <input type="submit" class="edit-profile btn btn-default" id="{{@index}}" data-id="{{id}}" value="Update">
-    </div>
+        <input type="submit"  id="save-profile-button"  class="edit-profile btn btn-default" value="Update">
+      </div>
     </fieldset>
   </form>
-{{/profile}}

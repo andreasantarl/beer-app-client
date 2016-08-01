@@ -1,13 +1,15 @@
 'use strict';
 //
 const getFormFields = require('../../../lib/get-form-fields');
+const profileCreateTemplate = require('./../templates/profile_create.handlebars');
+const profileEditTemplate = require('./../templates/edit_profile_form.handlebars');
 
 const api = require('./api_profiles');
 const ui = require('./ui_profiles');
 const app = require('../app.js');
 
 const onCreateMyProfile = (event) => {
-  // $("#view-profile").hide();
+  // $("#view-profile-section").hide();
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createMyProfile(data)
@@ -43,13 +45,22 @@ const onLoadMyProfile = (event) => {
   // $('#update-profile').on('submit', onUpdateMyProfile);
 };
 
-const profileHandlers = () => {
-  $('#my-profile').on('click', function(event) {
-    event.preventDefault();
-    // $('#create-my-profile').show('slow');
-    // $('#view-profile-section').hide('slow');
-  });
+const displayProfileForm = (event) => {
+  event.preventDefault();
+  $('#handlebars').html(profileCreateTemplate());
   $('#create-my-profile').on('submit', onCreateMyProfile);
+  // $('#create-my-profile').show('slow');
+  // $('#view-profile-section').hide('slow');
+};
+
+const profileHandlers = () => {
+  $('#my-profile').on('click', displayProfileForm);
+  // function(event) {
+  //   event.preventDefault();
+  //     $('#handlebars').html(profileCreateTemplate());
+  //   // $('#create-my-profile').show('slow');
+  //   // $('#view-profile-section').hide('slow');
+  // });
   $('#edit-my-profile-form').on('submit', onUpdateMyProfile);
   $('#view-my-profile').on('click', onShowMyProfile);
   // $('#view-my-profile').on('click', function(event) {
