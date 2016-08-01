@@ -10,6 +10,9 @@ const createMyProfileSuccess = (data) => {
 };
 
 const showMyProfileSuccess = (data) => {
+
+  // app.profile = data;
+  console.log(app);
   $("#create-my-profile").hide();
   $('#view-profile').html(profileTemplate(data.profile));
   // $('#edit-profile-button').on('click', onEditWorkout);

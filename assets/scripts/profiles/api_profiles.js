@@ -25,7 +25,7 @@ const showMyProfile = () => {
   console.log(app);
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: app.host + '/profiles/' + app.user.profile.id,
+      url: app.host + '/profiles/' + app.userProfileId,
       method: 'GET',
       headers: {
         Authorization: 'Token token=' + app.user.token,
