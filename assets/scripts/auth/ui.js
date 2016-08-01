@@ -35,6 +35,9 @@ const signInSuccess = (data) => {
   $("#profileModalbutton").show();
   $("#signUpSignIn").hide();
   $("#my-profile").show();
+  $("#profile-dropdown").show();
+
+
 
 
 };

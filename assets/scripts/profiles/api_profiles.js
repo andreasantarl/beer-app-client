@@ -43,7 +43,7 @@ const showMyProfile = () => {
 const updateMyProfile = (data) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: app.host + '/profiles/' + app.user.profile.id,
+      url: app.host + '/profiles/' + app.profile.profile.id,
       method: "PATCH",
       headers: {
         Authorization: 'Token token=' + app.user.token,

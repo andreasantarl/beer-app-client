@@ -7,7 +7,7 @@ const ui = require('./ui_profiles');
 const app = require('../app.js');
 
 const onCreateMyProfile = (event) => {
-  $("#view-profile").hide();
+  // $("#view-profile").hide();
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createMyProfile(data)
@@ -16,7 +16,7 @@ const onCreateMyProfile = (event) => {
 };
 
 const onShowMyProfile = () => {
-  $('#view-profile').show();
+  // $("#view-profile-section").show();
   return api.showMyProfile()
     .then(ui.showMyProfileSuccess)
     .catch(error => console.error(error));
@@ -24,7 +24,6 @@ const onShowMyProfile = () => {
 
 
 const onUpdateMyProfile = (event) => {
-  debugger;
   event.preventDefault();
   let data = getFormFields(event.target);
   console.log(data);
@@ -34,7 +33,8 @@ const onUpdateMyProfile = (event) => {
 };
 
 const onLoadMyProfile = (event) => {
-  $('#view-profile').hide();
+  // $('#view-profile').hide();
+  // $("#edit-profile-section").show();
   event.preventDefault();
   return api.showMyProfile()
     .then(ui.showProfileForEdit)
@@ -46,8 +46,8 @@ const onLoadMyProfile = (event) => {
 const profileHandlers = () => {
   $('#my-profile').on('click', function(event) {
     event.preventDefault();
-    $('#create-my-profile').show();
-    $('#view-profile').hide();
+    // $('#create-my-profile').show();
+    // $('#view-profile-section').hide();
   });
   $('#create-my-profile').on('submit', onCreateMyProfile);
   $('#edit-my-profile-form').on('submit', onUpdateMyProfile);
