@@ -40,10 +40,10 @@ const showMyProfile = () => {
   });
 };
 
-const updateMyProfile = (data, id) => {
+const updateMyProfile = (data) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: app.host + '/profiles/' + id,
+      url: app.host + '/profiles/' + app.user.profile.id,
       method: "PATCH",
       headers: {
         Authorization: 'Token token=' + app.user.token,

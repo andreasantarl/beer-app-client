@@ -22,14 +22,25 @@ const onShowMyProfile = () => {
     .catch(error => console.error(error));
 };
 
+
 const onUpdateMyProfile = (event) => {
+  debugger;
   event.preventDefault();
-  // let buttonId = $(event.target).find('.save-profile-button').attr('data-id');
-  // console.log(buttonId);
   let data = getFormFields(event.target);
+  console.log(data);
   api.updateMyProfile(data)
   .then(ui.updateMyProfileSuccess)
   .catch(error => console.error(error));
+};
+
+const onLoadMyProfile = (event) => {
+  $('#view-profile').hide();
+  event.preventDefault();
+  return api.showMyProfile()
+    .then(ui.showProfileForEdit)
+    .catch(error => console.error(error));
+  // .catch(error => console.error(error));
+  // $('#update-profile').on('submit', onUpdateMyProfile);
 };
 
 const profileHandlers = () => {
@@ -39,8 +50,9 @@ const profileHandlers = () => {
     $('#view-profile').hide();
   });
   $('#create-my-profile').on('submit', onCreateMyProfile);
-  $('#update-profile-form').on('submit', onUpdateMyProfile);
+  $('#edit-my-profile-form').on('submit', onUpdateMyProfile);
   $('#view-my-profile').on('click', onShowMyProfile);
+  $('#edit-profile-button').on('click', onLoadMyProfile);
 };
 
 module.exports = {

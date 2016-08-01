@@ -22,7 +22,7 @@
                       <ul class="dropdown-menu">
                         <li><button id="my-profile" type="button" class="btn btn-default btn-md rightNavButton">Create My Profile</button></li>
                         <li><button id="view-my-profile" type="button" class="btn btn-default btn-md rightNavButton">View My Profile</button></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><button id="edit-my-profile" type="button" class="btn btn-default btn-md rightNavButton">Edit My Profile</button></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                         <li role="separator" class="divider"></li>
@@ -173,7 +173,28 @@
     <button type="submit" class="btn btn-primary">Submit</button>
     </fieldset>
   </form>
-  <div id="view-profile"></div>
+
+  <!-- View profile section -->
+  <div id="view-profile-section">
+    <div id="view-profile"></div>
+    <div class="profileEditButton">
+      <input id="edit-profile-button" type="submit" class="edit-profile btn btn-default" value="Update Profile">
+    </div>
+  </div>
+
+  <!-- Edit profile section -->
+  <div id="edit-profile-section">
+    <form class="profile-display" id="edit-my-profile-form">
+      <fieldset class="form-group">
+        <div class="row">
+          <div id="edit-profile"></div>
+        </div>
+        <div class="profileEditButton">
+          <input type="submit"  id="save-profile-button"  class="edit-profile btn btn-default" value="Update">
+        </div>
+      </fieldset>
+    </form>
+  </div>
 
 
   </body>
