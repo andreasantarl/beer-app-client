@@ -46,12 +46,18 @@ const onLoadMyProfile = (event) => {
 const profileHandlers = () => {
   $('#my-profile').on('click', function(event) {
     event.preventDefault();
-    // $('#create-my-profile').show();
-    // $('#view-profile-section').hide();
+    // $('#create-my-profile').show('slow');
+    // $('#view-profile-section').hide('slow');
   });
   $('#create-my-profile').on('submit', onCreateMyProfile);
   $('#edit-my-profile-form').on('submit', onUpdateMyProfile);
   $('#view-my-profile').on('click', onShowMyProfile);
+  // $('#view-my-profile').on('click', function(event) {
+  //   event.preventDefault();
+  //   $('#create-my-profile').hide();
+  //   $('#view-profile-section').show();
+  //   $('#view-profile').show();
+  // });
   $('#edit-profile-button').on('click', onLoadMyProfile);
 };
 
