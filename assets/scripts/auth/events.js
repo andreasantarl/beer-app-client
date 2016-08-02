@@ -6,6 +6,8 @@ const api = require('./api');
 const ui = require('./ui');
 const apiBeers = require('../beers/api_beers.js');
 const uiBeers = require('../beers/ui_beers.js');
+const eventsBeers = require('../beers/events_beers.js');
+
 //const app = require('./../app');
 
 const onSignUp = (event) => {
@@ -23,8 +25,14 @@ const onSignIn = (event) => {
   .then(ui.signInSuccess)
   .then(api.getUserProfileId)
   .then(ui.getUserProfileIdSuccess)
-  .then(apiBeers.showUserBeers)
-  .then(uiBeers.showUserBeersSuccess)
+  // .then(apiBeers.showUserBeers)
+  // .then(uiBeers.showUserBeersSuccess)
+  .then(eventsBeers.onShowMyBeers)
+  // .then(() => {
+  //   $('.delete-beer-button').on('click', eventsBeers.onDeleteBeer);
+  //   // $('.edit-beer`-button').on('click', onEditBeer);
+  // })
+  // .then(eventsBeers.updateDeleteBeersHandlers)
   .catch(error => console.error(error));
 };
 

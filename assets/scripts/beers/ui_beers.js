@@ -1,11 +1,11 @@
 'use strict';
 
-// const app = require('../app.js');
-const displayBeersTemplate = require('./../templates/display_beers.handlebars');
+const app = require('../app.js');
+// const displayBeersTemplate = require('./../templates/display_beers.handlebars');
 
 const createOneBeerSuccess = (data) => {
   console.log(data);
-  // app.user.beers = data.beers;
+  app.user.beers = data.beers;
   $('input[type="text"], textarea').val('');
   $('#handlebars').html('');
   $('#myBeerModal').modal('toggle');
@@ -13,13 +13,15 @@ const createOneBeerSuccess = (data) => {
 
 const showUserBeersSuccess = (data) => {
   console.log(data);
-  $('#handlebars').html(displayBeersTemplate(data));
+  // $('#handlebars').html(displayBeersTemplate(data));
+
   // $('#handlebars').html(displayBeersTemplate());
 };
 
 const deleteBeerSuccess = () => {
   // console.log('Bucket deleted successfully');
-  app.beer = null;
+  console.log(app);
+  //  app.user.beers.id = null;
 };
 
 const editBeerSuccess = (data) => {
@@ -32,4 +34,5 @@ module.exports = {
   showUserBeersSuccess,
   deleteBeerSuccess,
   editBeerSuccess,
+
 };

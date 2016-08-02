@@ -2,6 +2,8 @@
 //
 const getFormFields = require('../../../lib/get-form-fields');
 const beersTemplate = require('./../templates/create_edit_beers.handlebars');
+const displayBeersTemplate = require('./../templates/display_beers.handlebars');
+
 // const displayBeersTemplate = require('./../templates/display_beers.handlebars');
 
 // const profileEditTemplate = require('./../templates/edit_profile_form.handlebars');
@@ -16,9 +18,22 @@ const onCreateOneBeer = (event) => {
   console.log(data);
   api.createOneBeer(data)
   .then(ui.createOneBeerSuccess)
-  .then(api.showUserBeers)
-  .then(ui.showUserBeersSuccess)
+  // .then(api.showUserBeers)
+  // .then(ui.showUserBeersSuccess)
+  .then(onShowMyBeers)
   .catch(error => console.error(error));
+};
+
+const onShowMyBeers = () => {
+  return api.showUserBeers()
+    // .then(ui.showUserBeersSuccess)
+    .then((data) => {
+      $('#handlebars').html(displayBeersTemplate(data));
+    })
+    .then(() => {
+      $('.delete-beer-button').on('click', onDeleteBeer);
+    })
+    .catch(error => console.error(error));
 };
 
 const displayBeerForm = (event) => {
@@ -43,15 +58,24 @@ const displayBeerForm = (event) => {
 
 const onDeleteBeer = (event) => {
   event.preventDefault();
-  let buttonId = $(event.target).attr('data-id');
-  api.deleteBeer(buttonId)
+  let id = $(event.target).attr('data-id');
+  // console.log(id);
+  api.deleteBeer(id)
   .then(ui.deleteBeerSuccess)
-  .then(onUserBuckets)
-  .catch(error => console.error(error))
+  .then(onShowMyBeers)
+  // .then(onUserBuckets)
+  .catch(error => console.error(error));
 };
+//
+// const updateDeleteBeersHandlers = (event) => {
+//
+// };
 
 const beerHandlers = () => {
   $('#create-beers-button').on('click', displayBeerForm);
+  // $('.delete-beer-button').on('click', onDeleteBeer);
+  $('#my-beers').on('click', onShowMyBeers);
+
 };
 
 module.exports = {
