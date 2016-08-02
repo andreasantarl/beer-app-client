@@ -71,10 +71,11 @@ const changePassword = (data) => {
   });
 };
 
-const getUserProfileId = () => {
+const getUserId = (id) => {
+  console.log(id);
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: app.host + '/users/' + app.user.id,
+      url: app.host + '/users/' + id,
       method: 'GET',
       headers: {
         Authorization: 'Token token=' + app.user.token,
@@ -94,6 +95,6 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  getUserProfileId,
+  getUserId,
   // setProfile,
 };

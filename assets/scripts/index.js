@@ -20,7 +20,7 @@ $(() => {
   // $("#create-my-profile").hide();
   // $("#profile-dropdown").hide();
   // $("#view-profile-section").hide();
-  // $("#edit-profile-section").hide();
+  // $("#sign-in-success-nav").hide();
 
 
 

@@ -14,28 +14,19 @@ const success = (data) => {
   $('#sign-up-message').text("Thank you for creating an account!  Please now sign in.");
 };
 
-// const failure = (error) => {
-//   console.error(error);
-//   $('#sign-up-message').text('');
-//   $('#sign-up-message').text("Please enter a valid username and/or password.");
-//
-// };
-
-// const signInFailure = (error) => {
-//   console.error(error);
-//   $('#sign-in-message').text("Please enter a valid username and/or password");
-//
-// };
-
 const signInSuccess = (data) => {
+  console.log(data);
   app.user = data.user;
   $("#loginModal").modal("hide");
   $("#sign-out").show();
   $("#changePasswordModalbutton").show();
   $("#profileModalbutton").show();
-  $("#signUpSignIn").hide();
+  $("#log-in-nav").hide();
   $("#my-profile").show();
-  $("#profile-dropdown").show();
+  $("#sign-in-success-nav").show();
+  $(".login-incomplete").addClass('hidden');
+  $(".login-success-nav").removeClass('hidden');
+  return app.user.id;
 
 };
 
@@ -60,15 +51,12 @@ const changePasswordSuccess = () => {
   $(".password-info").val("");
 };
 
-// const changePasswordFailure = (error) => {
-//   console.error(error);
-//   $('#change-password-message').text("Please enter a valid password");
-//
-// };
 
-const getUserProfileIdSuccess = (data) => {
-  // console.log(data);
-  app.user.profile = data.user.profile;
+const getUserIdSuccess = (data) => {
+
+  app.user = data.user;
+    console.log('is profile:', app.user);
+    return app.user;
 };
 
 module.exports = {
@@ -78,6 +66,6 @@ module.exports = {
   // signInFailure,
   signOutSuccess,
   changePasswordSuccess,
-  getUserProfileIdSuccess
+  getUserIdSuccess
   // changePasswordFailure,
 };

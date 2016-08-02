@@ -7,9 +7,9 @@ const profileEditTemplate = require('./../templates/edit_profile_form.handlebars
 
 const createMyProfileSuccess = (data) => {
   console.log(data);
-    // app.profile = data;
-    app.user.userProfileId = data.profile.id;
-  console.log(app.user.userProfileId);
+    app.profile = data;
+    // app.user.userProfileId = data.profile.id;
+  console.log(app.profile);
 };
 
 const showMyProfileSuccess = (data) => {

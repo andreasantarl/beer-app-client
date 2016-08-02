@@ -9,11 +9,17 @@ const ui = require('./ui_profiles');
 const app = require('../app.js');
 
 const onShowMyProfile = () => {
-  // let profileId = app.user.profile.id;
-  let profileId = $('#userProfileId').val();
-  return api.showMyProfile(profileId)
-    .then(ui.showMyProfileSuccess)
-    .catch(error => console.error(error));
+  console.log(app);
+  // let profileId = data.profile.id;
+  // let userProfileId = app.profile.id;
+  // let profileId = $('#userProfileId').val();
+// let userProfileId = app.profile.profile.id;
+  return api.showMyProfile()
+    .then(ui.showMyProfileSuccess);
+    // .catch((error) => {
+    //   console.error(error);
+    //   // $('#my-profile').on('click', displayProfileForm);
+    // });
 };
 
 const onCreateMyProfile = (event) => {
@@ -21,7 +27,7 @@ const onCreateMyProfile = (event) => {
   let data = getFormFields(event.target);
   api.createMyProfile(data)
   .then(ui.createMyProfileSuccess)
-  .then(onShowMyProfile)
+  // .then(onShowMyProfile)
   .catch(error => console.error(error));
 };
 
@@ -42,8 +48,7 @@ const onLoadMyProfile = (event) => {
     .catch(error => console.error(error));
 };
 
-const displayProfileForm = (event) => {
-  event.preventDefault();
+const displayProfileForm = () => {
   $('#handlebars').html(profileCreateTemplate());
   $('#create-my-profile').on('submit', onCreateMyProfile);
 };
@@ -57,4 +62,5 @@ const profileHandlers = () => {
 
 module.exports = {
   profileHandlers,
+  displayProfileForm,
 };

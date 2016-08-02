@@ -6,7 +6,8 @@ const api = require('./api');
 const ui = require('./ui');
 const apiBeers = require('../beers/api_beers.js');
 const uiBeers = require('../beers/ui_beers.js');
-const eventsBeers = require('../beers/events_beers.js');
+const eventsProfiles = require('../profiles/events_profiles.js');
+const apiProfiles = require('../profiles/api_profiles.js');
 
 //const app = require('./../app');
 
@@ -23,17 +24,17 @@ const onSignIn = (event) => {
   let data = getFormFields(event.target);
   api.signIn(data)
   .then(ui.signInSuccess)
-  .then(api.getUserProfileId)
-  .then(ui.getUserProfileIdSuccess)
-  // .then(apiBeers.showUserBeers)
-  // .then(uiBeers.showUserBeersSuccess)
-  .then(eventsBeers.onShowMyBeers)
-  // .then(() => {
-  //   $('.delete-beer-button').on('click', eventsBeers.onDeleteBeer);
-  //   // $('.edit-beer`-button').on('click', onEditBeer);
-  // })
-  // .then(eventsBeers.updateDeleteBeersHandlers)
-  .catch(error => console.error(error));
+  .then(api.getUserId)
+  .then(ui.getUserIdSuccess)
+  .then((user) =>{
+    if (user.profile === null) {
+      eventsProfiles.displayProfileForm();
+
+    };
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 };
 
 const onSignOut = (event) => {
