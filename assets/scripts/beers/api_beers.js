@@ -8,7 +8,7 @@ const createOneBeer = (data) => {
       url: app.host + '/beers',
       method: "POST",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       data: data,
       success: (response) => {
@@ -29,12 +29,12 @@ const addToTriedBeers = (data) => {
       url: app.host + '/tried_beers',
       method: "POST",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       data: {
         tried_beer: {
           beer_id: beer_id,
-          profile_id: app.user.profile.id,
+          profile_id: app.profile.id,
         }
       },
       success: (response) => {
@@ -53,7 +53,7 @@ const showUserBeers = () => {
       url: app.host + '/beers',
       method: "GET",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       success: (response) => {
         resolve(response);
@@ -71,7 +71,7 @@ const showOneBeer = (id) => {
       url: app.host + '/beers/' + id,
       method: "GET",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       success: (response) => {
         resolve(response);
@@ -89,7 +89,7 @@ const editBeer = (data, id) => {
       url: app.host + '/beers/' + id,
       method: "PATCH",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       data: data,
       success: (response) => {
@@ -108,7 +108,7 @@ const deleteBeer = (id) => {
       url: app.host + '/beers/' + id,
       method: "DELETE",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       success: (response) => {
         resolve(response);

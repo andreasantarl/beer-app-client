@@ -25,12 +25,11 @@ const onSignIn = (event) => {
   api.signIn(data)
   .then(ui.signInSuccess)
   .then(api.getUserId)
-  .then(ui.getUserIdSuccess)
-  .then((user) =>{
-    if (user.profile === null) {
+  // .then(ui.getUserIdSuccess)
+  .then((data) =>{
+    if (!data.user.profile) {
       eventsProfiles.displayProfileForm();
-
-    };
+    }
   })
   .catch((error) => {
     console.error(error);

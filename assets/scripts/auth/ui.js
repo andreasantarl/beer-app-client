@@ -14,9 +14,7 @@ const success = (data) => {
   $('#sign-up-message').text("Thank you for creating an account!  Please now sign in.");
 };
 
-const signInSuccess = (data) => {
-  console.log(data);
-  app.user = data.user;
+const signInSuccess = () => {
   $("#loginModal").modal("hide");
   $("#sign-out").show();
   $("#changePasswordModalbutton").show();
@@ -26,8 +24,6 @@ const signInSuccess = (data) => {
   $("#sign-in-success-nav").show();
   $(".login-incomplete").addClass('hidden');
   $(".login-success-nav").removeClass('hidden');
-  return app.user.id;
-
 };
 
 const signOutSuccess = () => {
@@ -53,10 +49,10 @@ const changePasswordSuccess = () => {
 
 
 const getUserIdSuccess = (data) => {
-
-  app.user = data.user;
-    console.log('is profile:', app.user);
-    return app.user;
+    console.log('user is ', app.user);
+    console.log('profile is ', app.profile);
+    console.log('token is ', app.userToken);
+    return data;
 };
 
 module.exports = {

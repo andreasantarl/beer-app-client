@@ -31,6 +31,10 @@ const signIn = (data) => {
         reject(error);
       },
     });
+  }).then((data) => {
+    app.user = data.user;
+    app.userToken = data.user.token;
+    return data;
   });
 };
 
@@ -40,7 +44,7 @@ const signOut = () => {
       url: app.host + '/sign-out/' + app.user.id,
       method: "DELETE",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       success: (response) => {
         resolve(response);
@@ -58,7 +62,7 @@ const changePassword = (data) => {
       url: app.host + '/change-password/' + app.user.id,
       method: "PATCH",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       data: data,
       success: (response) => {
@@ -71,14 +75,15 @@ const changePassword = (data) => {
   });
 };
 
-const getUserId = (id) => {
-  console.log(id);
+const getUserId = () => {
+  console.log(app.user.id);
+  console.log('token is ', app.userToken);
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: app.host + '/users/' + id,
+      url: app.host + '/users/' + app.user.id,
       method: 'GET',
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       success: (response) => {
         resolve(response);
@@ -87,6 +92,10 @@ const getUserId = (id) => {
         reject(error);
       },
     });
+  }).then((data) => {
+    console.log("HEEEEEEEYY", data)
+    app.profile = data.user.profile;
+    return data;
   });
 };
 

@@ -8,7 +8,7 @@ const createMyProfile = (data) => {
       url: app.host + '/profiles',
       method: "POST",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       data: data,
       success: (response) => {
@@ -23,12 +23,15 @@ const createMyProfile = (data) => {
 
 const showMyProfile = () => {
   console.log('user is ', app.user);
+  console.log('usertoken is ', app.userToken);
+  console.log('profile is ', app.profile);
+
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: app.host + '/profiles/' + app.user.profile.id,
+      url: app.host + '/profiles/' + app.profile.id,
       method: 'GET',
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       success: (response) => {
         resolve(response);
@@ -43,10 +46,10 @@ const showMyProfile = () => {
 const updateMyProfile = (data) => {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: app.host + '/profiles/' + app.profile.profile.id,
+      url: app.host + '/profiles/' + app.profile.id,
       method: "PATCH",
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token=' + app.userToken,
       },
       data: data,
       success: (response) => {
@@ -66,7 +69,7 @@ const updateMyProfile = (data) => {
 //       url: app.host + '/userbuckets',
 //       method: 'GET',
 //       headers: {
-//         Authorization: 'Token token=' + app.user.token,
+//         Authorization: 'Token token=' + app.userToken,
 //       },
 //       success: (response) => {
 //         resolve(response);
@@ -99,7 +102,7 @@ const updateMyProfile = (data) => {
 //       url: app.host + '/buckets/' + id,
 //       method: "DELETE",
 //       headers: {
-//         Authorization: 'Token token=' + app.user.token,
+//         Authorization: 'Token token=' + app.userToken,
 //       },
 //       success: (response) => {
 //         resolve(response);

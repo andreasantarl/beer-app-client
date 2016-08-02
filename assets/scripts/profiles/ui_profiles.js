@@ -6,15 +6,13 @@ const profileTemplate = require('./../templates/view_my_profile_form.handlebars'
 const profileEditTemplate = require('./../templates/edit_profile_form.handlebars');
 
 const createMyProfileSuccess = (data) => {
-  console.log(data);
-    app.profile = data;
+  app.profile = data.profile;
     // app.user.userProfileId = data.profile.id;
-  console.log(app.profile);
 };
 
 const showMyProfileSuccess = (data) => {
   console.log(data);
-  // app.user.profile.userProfileId = data.profile.id;
+  // app.profile.userProfileId = data.profile.id;
   $('#handlebars').html(profileTemplate(data.profile));
 };
 
