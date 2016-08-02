@@ -9,11 +9,14 @@
 
 const authEvents = require('./auth/events.js');
 const profileEvents = require('./profiles/events_profiles.js');
+const beerEvents = require('./beers/events_beers.js');
 
 // On document ready
 $(() => {
   authEvents.addHandlers();
   profileEvents.profileHandlers();
+  beerEvents.beerHandlers();
+  // beerEvents.displayUserBeers();
   // $("#create-my-profile").hide();
   // $("#profile-dropdown").hide();
   // $("#view-profile-section").hide();

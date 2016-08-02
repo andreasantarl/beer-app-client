@@ -4,6 +4,8 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const api = require('./api');
 const ui = require('./ui');
+const apiBeers = require('../beers/api_beers.js');
+const uiBeers = require('../beers/ui_beers.js');
 //const app = require('./../app');
 
 const onSignUp = (event) => {
@@ -21,6 +23,8 @@ const onSignIn = (event) => {
   .then(ui.signInSuccess)
   .then(api.getUserProfileId)
   .then(ui.getUserProfileIdSuccess)
+  .then(apiBeers.showUserBeers)
+  .then(uiBeers.showUserBeersSuccess)
   .catch(error => console.error(error));
 };
 
