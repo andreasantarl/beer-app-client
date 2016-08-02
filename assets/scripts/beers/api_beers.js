@@ -21,10 +21,54 @@ const createOneBeer = (data) => {
   });
 };
 
+const addToTriedBeers = (data) => {
+  console.log(data);
+  let beer_id = data.beer.id;
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: app.host + '/tried_beers',
+      method: "POST",
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+      data: {
+        tried_beer: {
+          beer_id: beer_id,
+          profile_id: app.user.profile.id,
+        }
+      },
+      success: (response) => {
+        resolve(response);
+      },
+      error: (error) => {
+        reject(error);
+      },
+    });
+  });
+};
+
 const showUserBeers = () => {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/beers',
+      method: "GET",
+      headers: {
+        Authorization: 'Token token=' + app.user.token,
+      },
+      success: (response) => {
+        resolve(response);
+      },
+      error: (error) => {
+        reject(error);
+      },
+    });
+  });
+};
+
+const showOneBeer = (id) => {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: app.host + '/beers/' + id,
       method: "GET",
       headers: {
         Authorization: 'Token token=' + app.user.token,
@@ -82,4 +126,6 @@ module.exports = {
   showUserBeers,
   editBeer,
   deleteBeer,
+  showOneBeer,
+  addToTriedBeers,
 };
