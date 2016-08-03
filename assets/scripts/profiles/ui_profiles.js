@@ -7,12 +7,10 @@ const profileEditTemplate = require('./../templates/edit_profile_form.handlebars
 
 const createMyProfileSuccess = (data) => {
   app.profile = data.profile;
-    // app.user.userProfileId = data.profile.id;
 };
 
 const showMyProfileSuccess = (data) => {
   console.log(data);
-  // app.profile.userProfileId = data.profile.id;
   $('#handlebars').html(profileTemplate(data.profile));
 };
 
@@ -23,7 +21,6 @@ const showProfileForEdit = (data) => {
 const updateMyProfileSuccess = () => {
      $('#handlebars').html('');
 };
-
 
 module.exports = {
   createMyProfileSuccess,

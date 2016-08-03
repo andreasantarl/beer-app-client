@@ -27,7 +27,7 @@ const onCreateMyProfile = (event) => {
   let data = getFormFields(event.target);
   api.createMyProfile(data)
   .then(ui.createMyProfileSuccess)
-  // .then(onShowMyProfile)
+  .then(onShowMyProfile)
   .catch(error => console.error(error));
 };
 
