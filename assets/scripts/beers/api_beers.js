@@ -65,7 +65,23 @@ const showUserBeers = () => {
   });
 };
 
+const showAllUserBeers = () => {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: app.host + '/all-beers',
+      method: "GET",
+      success: (response) => {
+        resolve(response);
+      },
+      error: (error) => {
+        reject(error);
+      },
+    });
+  });
+};
+
 const showOneBeer = (id) => {
+  console.log('id in API ', id);
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/beers/' + id,
@@ -128,4 +144,5 @@ module.exports = {
   deleteBeer,
   showOneBeer,
   addToTriedBeers,
+  showAllUserBeers,
 };

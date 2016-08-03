@@ -3,6 +3,7 @@
 const app = require('../app.js');
 // const displayBeersTemplate = require('./../templates/display_beers.handlebars');
 const beersTemplate = require('./../templates/edit_beer_template.handlebars');
+const displayAllUserBeersTemplate = require('./../templates/display_everyone_beers.handlebars');
 
 
 const createOneBeerSuccess = (data) => {
@@ -14,6 +15,7 @@ const createOneBeerSuccess = (data) => {
 };
 
 const showOneBeerSuccess = (data) => {
+  console.log("beer data ", data);
   $('#myBeerModal').modal('toggle');
   $('.beer-modal-body').html(beersTemplate(data));
 };
@@ -37,6 +39,11 @@ const editBeerSuccess = (data) => {
 
 };
 
+const showAllUserBeersSuccess = (data) => {
+  console.log('user beers ', data);
+  $('#handlebars').html(displayAllUserBeersTemplate(data));
+}
+
 
 module.exports = {
   createOneBeerSuccess,
@@ -44,4 +51,5 @@ module.exports = {
   deleteBeerSuccess,
   editBeerSuccess,
   showOneBeerSuccess,
+  showAllUserBeersSuccess,
 };
