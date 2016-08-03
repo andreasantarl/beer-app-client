@@ -3,6 +3,9 @@
 const app = require('../app.js');
 
 const createOneBeer = (data) => {
+  console.log("create beer data ", data);
+  // let fd = new FormData(data);
+  // console.log("form data ", fd);
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/beers',
@@ -11,6 +14,8 @@ const createOneBeer = (data) => {
         Authorization: 'Token token=' + app.userToken,
       },
       data: data,
+      contentType: false,
+      processData: false,
       success: (response) => {
         resolve(response);
       },
@@ -70,6 +75,9 @@ const showAllUserBeers = () => {
     $.ajax({
       url: app.host + '/all-beers',
       method: "GET",
+      headers: {
+        Authorization: 'Token token=' + app.userToken,
+      },
       success: (response) => {
         resolve(response);
       },

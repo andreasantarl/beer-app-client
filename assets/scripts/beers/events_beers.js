@@ -11,7 +11,8 @@ const app = require('../app.js');
 
 const onCreateOneBeer = (event) => {
   event.preventDefault();
-  let data = getFormFields(event.target);
+  // let data = getFormFields(event.target);
+  let data = new FormData(event.target);
   console.log(data);
   api.createOneBeer(data)
   .then(api.addToTriedBeers)

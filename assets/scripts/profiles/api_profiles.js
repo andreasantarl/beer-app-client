@@ -3,6 +3,8 @@
 const app = require('../app.js');
 
 const createMyProfile = (data) => {
+
+
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/profiles',
