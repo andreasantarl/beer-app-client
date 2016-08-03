@@ -57,7 +57,9 @@ const profileHandlers = () => {
   $('#my-profile').on('click', displayProfileForm);
   $('#edit-my-profile-form').on('submit', onUpdateMyProfile);
   $('#view-my-profile').on('click', onShowMyProfile);
-  $('#edit-profile-button').on('click', onLoadMyProfile);
+  $('body').on('click', '#edit-profile-button', onLoadMyProfile);
+  $('body').on('submit', '#edit-my-profile-form', onUpdateMyProfile);
+
 };
 
 module.exports = {

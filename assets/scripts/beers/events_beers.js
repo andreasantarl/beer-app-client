@@ -58,7 +58,8 @@ const onEditBeer = (event) => {
 const saveBeerChanges = (event) => {
   event.preventDefault();
   let id = $(event.target).attr('data-id');
-  let data = getFormFields(event.target);
+  let data = new FormData(event.target);
+  // let data = getFormFields(event.target);
   api.editBeer(data, id)
   .then(ui.editBeerSuccess)
   .then(onShowMyBeers)
@@ -84,12 +85,25 @@ const onShowAllUserBeers = (event) => {
 
 };
 
+const onSaveSomeonesBeer = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
+  api.createOneBeer(data)
+  .then(api.addToTriedBeers)
+  .then(ui.createOneBeerSuccess)
+  // .then(onShowMyBeers)
+  .catch(error => console.error(error));
+};
+
 const beerHandlers = () => {
   $('#create-beers-button').on('click', displayBeerForm);
   $('#my-beers').on('click', onShowMyBeers);
   $('body').on('submit', '#edit-beer-profile', saveBeerChanges);
   $('#their-beers').on('click', onShowAllUserBeers);
+  $('body').on('click', '#add-someones-beer', onSaveSomeonesBeer);
 
+  // $('#add-someones-beer').on('click', onSaveSomeonesBeer);
 };
 
 module.exports = {

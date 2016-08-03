@@ -21,7 +21,7 @@ const showProfileForEdit = (data) => {
 };
 
 const updateMyProfileSuccess = () => {
-  // $('#edit-profile').hide();
+     $('#handlebars').html('');
 };
 
 

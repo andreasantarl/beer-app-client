@@ -1,7 +1,7 @@
 {{#each beers}}
 <div class="contents col-md-3 well col-md-push-1">
  <h4>Name: {{beer_name}}</h4>
-   Image here: {{photo}}
+   <img src="{{photo}}" width="100px">
    <div class="beerEditDeleteButtons">
      <button type="submit" class="delete-beer-button btn btn-default" id="{{@index}}" data-id="{{id}}">Delete</button>
      <button type="submit" class="edit-beer-button btn btn-default" id="{{@index}}" data-id="{{id}}" data-toggle="modal" data-target="#modal-fullscreen-update-beer">Update</button>

@@ -116,6 +116,8 @@ const editBeer = (data, id) => {
         Authorization: 'Token token=' + app.userToken,
       },
       data: data,
+      contentType: false,
+      processData: false,
       success: (response) => {
         resolve(response);
       },
