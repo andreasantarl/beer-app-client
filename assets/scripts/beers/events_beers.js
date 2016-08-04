@@ -9,6 +9,8 @@ const api = require('./api_beers');
 const ui = require('./ui_beers');
 const app = require('../app.js');
 
+// $('#sortable', 'click').sortable();
+
 const onCreateOneBeer = (event) => {
   event.preventDefault();
   // let data = getFormFields(event.target);
@@ -27,6 +29,7 @@ const onCreateOneBeer = (event) => {
 const onShowMyBeers = () => {
   return api.showUserBeers()
     .then((data) => {
+      $('#welcome').html('');
       $('#handlebars').html(displayBeersTemplate(data));
       // $('.delete-beer-button').on('click', onDeleteBeer);
       // $('.edit-beer-button').on('click', onEditBeer);

@@ -2,6 +2,8 @@
 
 const app = require('../app.js');
 
+
+
 // let userId;
 $("#sign-out").hide();
 $("#changePasswordModalbutton").hide();
@@ -24,6 +26,7 @@ const signInSuccess = () => {
   $("#sign-in-success-nav").show();
   $(".login-incomplete").addClass('hidden');
   $(".login-success-nav").removeClass('hidden');
+  // $('#handlebars').html(displayWelcomeTemplate(data));
 };
 
 const signOutSuccess = () => {
@@ -40,6 +43,10 @@ const signOutSuccess = () => {
   $("#signUpSignIn").show();
   $("#create-my-profile").hide();
   $("#view-profile").hide();
+  $('#handlebars').html('');
+  $('#welcome').html('');
+  $(".login-incomplete").removeClass('hidden');
+  $(".login-success-nav").addClass('hidden');
 
 };
 const changePasswordSuccess = () => {

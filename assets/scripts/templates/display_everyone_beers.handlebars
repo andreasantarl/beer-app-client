@@ -1,15 +1,14 @@
 {{#each beers}}
-
+<li>
   <div class="contents col-md-3 well col-md-push-1">
     Name: {{beer_name}}
-    <!-- <img src="{{photo}}"/> -->
     <form class="beer-display" id="add-someones-beer" enctype="multipart/form-data">
       <fieldset class="form-group">
-      <input class="form-control" type="text" name=beers[beer_name] value="{{beer_name}}" hidden/>
-      <input class="form-control" type="file" name=beers[photo] value="{{photo}}" hidden/>
-      <button type="submit" class="add-other-beer btn btn-default">Add this beer!</button>
-    </fieldset>
-  </form>
+        <input class="form-control" type="text" name=beers[beer_name] value="{{beer_name}}" hidden/>
+        <input class="form-control" type="file" name=beers[photo] value="{{photo}}" hidden/>
+        <button type="submit" class="add-other-beer btn btn-default">Add this beer!</button>
+      </fieldset>
+    </form>
   <!-- <form class="beer-display hidden" id="add-someones-beer" enctype="multipart/form-data">
     <fieldset class="form-group">
     <input class="form-control" type="text" name=beers[beer_name] value="{{beer_name}}" readonly/>
@@ -17,6 +16,6 @@
     <img src="{{photo}}"/> -->
     <!-- <button type="submit" class="add-other-beer btn btn-default">Add this beer!</button>
   </fieldset> -->
-</form>
-</div>
+  </div>
+</li>
 {{/each}}

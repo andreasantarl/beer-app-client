@@ -9,6 +9,10 @@ const uiBeers = require('../beers/ui_beers.js');
 const eventsProfiles = require('../profiles/events_profiles.js');
 const apiProfiles = require('../profiles/api_profiles.js');
 
+const displayWelcomeTemplate = require('./../templates/welcome.handlebars');
+const displayNewWelcomeTemplate = require('./../templates/new_welcome.handlebars');
+
+
 //const app = require('./../app');
 
 const onSignUp = (event) => {
@@ -28,7 +32,11 @@ const onSignIn = (event) => {
   // .then(ui.getUserIdSuccess)
   .then((data) =>{
     if (!data.user.profile) {
+      $('#welcome').html(displayNewWelcomeTemplate());
       eventsProfiles.displayProfileForm();
+    }
+    else {
+      $('#welcome').html(displayWelcomeTemplate(data.user.profile));
     }
   })
   .catch((error) => {

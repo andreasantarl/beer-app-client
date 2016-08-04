@@ -10,8 +10,9 @@ const createMyProfileSuccess = (data) => {
 };
 
 const showMyProfileSuccess = (data) => {
-  console.log(data);
+  // console.log(data);
   $('#handlebars').html(profileTemplate(data.profile));
+  $('#welcome').html('');
 };
 
 const showProfileForEdit = (data) => {
