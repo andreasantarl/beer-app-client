@@ -1,10 +1,41 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-// @import '~dragula/dragula';
+@import url(https://fonts.googleapis.com/css?family=Raleway:700);
 
+@font-face {
+  font-family: 'Museo Slab';
+  src: url('./museoslab_500_macroman/Museo_slab_500_2-webfont.ttf');
+}
+
+
+body {
+  background-color: #B2EBF2;
+}
 
 h1 {
   text-align: center;
+  color: #FF9800;
+  font-size: 65px;
+  font-family: 'Museo Slab';
+}
+
+p{
+  color: #212121;
+}
+
+.create-edit-beer{
+  background-color: #00BCD4;
+  color: #212121;
+}
+
+#signUpSignIn {
+  color: #FFFFFF;
+}
+
+.navbar{
+  background-color: #0097A7;
+  font-family: 'Raleway';
+  font-size: 24px;
 }
 
 .add-beer-button {
@@ -32,8 +63,8 @@ li {
 }
 
 #create-beers-button {
-  margin-left: 300px;
-  margin-top: -100px;
+  margin-left: 260px;
+  margin-top: -120px;
 }
 
 .beer-display{

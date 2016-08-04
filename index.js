@@ -9,6 +9,7 @@ require('./assets/scripts/index.js');
 
 // styles
 require('./assets/styles/index.scss');
+require('./node_modules/dragula/dist/dragula.css');
 
 // attach jQuery globally
 require('expose?$!jquery');

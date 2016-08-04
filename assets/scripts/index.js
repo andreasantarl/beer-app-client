@@ -11,6 +11,8 @@ const authEvents = require('./auth/events.js');
 const profileEvents = require('./profiles/events_profiles.js');
 const beerEvents = require('./beers/events_beers.js');
 
+const drake = require('./dragula');
+
 // On document ready
 $(() => {
   authEvents.addHandlers();
@@ -24,6 +26,5 @@ $(() => {
   // $("#view-profile-section").hide();
   // $("#sign-in-success-nav").hide();
 
-
-
+  drake();
 });
