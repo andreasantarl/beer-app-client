@@ -25,8 +25,8 @@ li {
 }
 
 .rightNavButton{
-  border-style: none;
   background-color: white;
+  border-style: none;
   text-align: center;
 }
 
@@ -38,4 +38,13 @@ li {
 .beer-display{
   margin: 0 auto;
   width: 80%;
+}
+
+#create-my-profile{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-control{
+  margin: 10px 0;
 }

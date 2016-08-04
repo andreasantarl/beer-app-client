@@ -91,14 +91,29 @@ const onShowAllUserBeers = (event) => {
 const onSaveSomeonesBeer = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
-  console.log("App data ", app);
+  // // console.log(data);
+  // // console.log("App data ", app);
+  // //bring up a beer with form field data
+  // // on submit add it to your bucket
+  // //add it to
+  // // api.editBeer(data)
   api.addOtherUserBeer(data)
+  // .then(ui.showOneBeerSuccess)
   .then(api.addToTriedBeers)
   .then(ui.addOtherUserBeerSuccess)
+
   .then(onShowMyBeers)
   .catch(error => console.error(error));
 };
+
+const displayOtherUserBeerEdit = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  $('#myBeerModal').modal('toggle');
+  $('#handlebars').html(beersEditTemplate(data));
+  // $('#beer-profile').on('submit', onSaveSomeonesBeer(data));
+
+}
 
 const beerHandlers = () => {
   $('#create-beers-button').on('click', displayBeerForm);
@@ -106,7 +121,7 @@ const beerHandlers = () => {
   $('body').on('submit', '#edit-beer-profile', saveBeerChanges);
   $('#their-beers').on('click', onShowAllUserBeers);
   $('body').on('submit', '#add-someones-beer', onSaveSomeonesBeer);
-
+  // $('body').on('submit', '#add-someones-beer', displayOtherUserBeerEdit);
   // $('#add-other-beer').on('click', onSaveSomeonesBeer);
 };
 
