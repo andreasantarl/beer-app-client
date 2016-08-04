@@ -2,24 +2,14 @@
 //
 const getFormFields = require('../../../lib/get-form-fields');
 const profileCreateTemplate = require('./../templates/profile_create.handlebars');
-const profileEditTemplate = require('./../templates/edit_profile_form.handlebars');
 
 const api = require('./api_profiles');
 const ui = require('./ui_profiles');
 const app = require('../app.js');
 
 const onShowMyProfile = () => {
-  console.log(app);
-  // let profileId = data.profile.id;
-  // let userProfileId = app.profile.id;
-  // let profileId = $('#userProfileId').val();
-// let userProfileId = app.profile.profile.id;
   return api.showMyProfile()
     .then(ui.showMyProfileSuccess);
-    // .catch((error) => {
-    //   console.error(error);
-    //   // $('#my-profile').on('click', displayProfileForm);
-    // });
 };
 
 const onCreateMyProfile = (event) => {
@@ -31,11 +21,9 @@ const onCreateMyProfile = (event) => {
   .catch(error => console.error(error));
 };
 
-
 const onUpdateMyProfile = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
   api.updateMyProfile(data)
   .then(ui.updateMyProfileSuccess)
   .catch(error => console.error(error));
@@ -59,7 +47,6 @@ const profileHandlers = () => {
   $('#view-my-profile').on('click', onShowMyProfile);
   $('body').on('click', '#edit-profile-button', onLoadMyProfile);
   $('body').on('submit', '#edit-my-profile-form', onUpdateMyProfile);
-
 };
 
 module.exports = {

@@ -2,16 +2,16 @@
 
 const app = require('../app.js');
 const profileTemplate = require('./../templates/view_my_profile_form.handlebars');
-// const profileEditTemplate = require('./../templates/edit_my_profile.handlebars');
 const profileEditTemplate = require('./../templates/edit_profile_form.handlebars');
 
 const createMyProfileSuccess = (data) => {
   app.profile = data.profile;
+  $('#my-profile').addClass('hidden');
 };
 
 const showMyProfileSuccess = (data) => {
-  console.log(data);
   $('#handlebars').html(profileTemplate(data.profile));
+  $('#welcome').html('');
 };
 
 const showProfileForEdit = (data) => {
@@ -19,7 +19,7 @@ const showProfileForEdit = (data) => {
 };
 
 const updateMyProfileSuccess = () => {
-     $('#handlebars').html('');
+  $('#handlebars').html('');
 };
 
 module.exports = {

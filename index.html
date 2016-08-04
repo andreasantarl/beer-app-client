@@ -14,15 +14,12 @@
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
-              <li><button type="button" id="signUpSignIn" class="btn btn-primary btn-md navButton login-incomplete" data-toggle="modal" data-target="#loginModal">Sign Up/Sign In</button></li>
-            <!-- <li><button id="profileModalbutton" type="button" class="btn btn-default btn-md rightNavButton " data-toggle="modal" data-target="#profileModal">My Profile</button></li> -->
-            <!-- <li><button id="my-profile" type="button" class="btn btn-default btn-md rightNavButton">My Profile</button></li> -->
+              <li><button type="button" id="signUpSignIn" class="btn btn-lg navButton login-incomplete" data-toggle="modal" data-target="#loginModal">Sign Up/Sign In</button></li>
               <li class="dropdown login-success-nav hidden" id="beers-dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Beers<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><button id="my-beers" type="button" class="rightNavButton">View My Beers</button></li>
                   <li><button id="their-beers" type="button" class="rightNavButton">View Other People's Beers</button></li>
-                  <!-- <li><button id="edit-my-profile" type="button" class="btn btn-default btn-md rightNavButton">Edit My Profile</button></li> -->
                 </ul>
               </li>
               <li class="dropdown login-success-nav hidden" id="profile-dropdown">
@@ -30,7 +27,6 @@
                 <ul class="dropdown-menu">
                   <li><button id="my-profile" type="button" class="rightNavButton">Create My Profile</button></li>
                   <li><button id="view-my-profile" type="button" class="rightNavButton">View My Profile</button></li>
-                  <!-- <li><button id="edit-my-profile" type="button" class="btn btn-default btn-md rightNavButton">Edit My Profile</button></li> -->
                 </ul>
               </li>
               <li class="dropdown login-success-nav hidden" id="account-dropdown">
@@ -38,14 +34,9 @@
                 <ul class="dropdown-menu">
                   <li><button id="changePasswordModalbutton" type="button" class="rightNavButton" data-toggle="modal" data-target="#changePasswordModal">Change Password</button></li>
                   <li><form id="sign-out"><fieldset><input class="sign-out rightNavButton" type="submit" value="Sign Out"></fieldset></form></li>
-                  <!-- <li><button id="edit-my-profile" type="button" class="btn btn-default btn-md rightNavButton">Edit My Profile</button></li> -->
                 </ul>
               </li>
           </ul>
-          <!-- <ul>
-            <li><button id="changePasswordModalbutton" type="button" class="btn btn-default btn-md rightNavButton" data-toggle="modal" data-target="#changePasswordModal">Change Password</button></li>
-            <li><form id="sign-out"><fieldset><input class="sign-out btn btn-default btn-md rightNavButton" type="submit" value="Sign Out"></fieldset></form></li>
-          </ul> -->
         </div>
       </div>
     </nav>
@@ -81,7 +72,6 @@
             <div id="sign-in-message"></div>
           </div>
           <div class="modal-footer">
-            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
           </div>
         </div>
       </div>
@@ -104,84 +94,47 @@
               </fieldset>
             </form>
           </div>
-
           <div id="change-password-message"></div>
-
           <div class="modal-footer">
-            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 gutter-5"> -->
-    <!-- <form id="sign-out">
-      <fieldset>
-      <legend>Sign Out!</legend>
-        <input class="sign-out btn btn-default btn-md rightNavButton" type="submit" value="Sign Out">
-      </fieldset>
-    </form> -->
-  <!-- </div> -->
 </div>
 </div>
 
 <!-- Title line -->
   <div class="container-fluid">
     <div class="row">
-        <h1>Beer Bracket</h1>
+        <h1>Beer {Bracket}</h1>
     </div>
     <br>
   <div class="row modalButtons">
 
-
-  <!-- View profile section -->
-  <!-- <div id="view-profile-section">
-    <div id="view-profile"></div>
-    <div class="profileEditButton">
-      <input id="edit-profile-button" type="submit" class="edit-profile btn btn-default" value="Update Profile">
-    </div>
-  </div> -->
-
-  <!-- Edit profile section -->
-  <!-- <div id="edit-profile-section">
-    <form class="profile-display" id="edit-my-profile-form">
-      <fieldset class="form-group">
-        <div class="row">
-          <div id="edit-profile"></div>
-        </div>
-        <div class="profileEditButton">
-          <input type="submit"  id="save-profile-button"  class="edit-profile btn btn-default" value="Update">
-        </div>
-      </fieldset>
-    </form>
-  </div> -->
-
-  <!-- <div >
-    OPEN BOOTSTRAP MODULE HERE
-    <button id="create-beers-button" value="submit">Create a new beer</button>
-  </div> -->
-
-<input id="create-beers-button" class="add-beer-button" type="image" src="./assets/styles/img/beer_can_img.png"  data-toggle="modal" data-target="#myBeersModal">
+<input id="create-beers-button" disabled class="add-beer-button" type="image" src="./assets/styles/img/beer_can_img.png"  data-toggle="modal" data-target="#myBeersModal">
 <div class="modal fade" id="myBeerModal" tabindex="-1" role="dialog" aria-labelledby="myBeerModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myBeerModalLabel">Add a beer</h4>
+        <h4 class="modal-title" id="myBeerModalLabel">Crushed another beer? Nice.</h4>
       </div>
       <div class="beer-modal-body">
-
-
+<!-- beer modal here -->
       </div>
-
     </div>
   </div>
 </div>
 
-  <!-- handlebars -->
-<div id='handlebars' class="container text-center">
+<!-- Welcome message here -->
+<div id='welcome' class="container text-center">
 </div>
+
+  <!-- handlebars -->
+
+    <div id='handlebars' class="container text-center"></div>
+  </ul>
 
   </body>
 </html>

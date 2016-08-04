@@ -1,9 +1,65 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url(https://fonts.googleapis.com/css?family=Raleway:700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Cabin);
 
+@font-face {
+  font-family: 'Museo Slab';
+  src: url('./museoslab_500_macroman/Museo_slab_500_2-webfont.ttf');
+}
+
+
+body {
+  background-color: #F0F7F4;
+}
 
 h1 {
   text-align: center;
+  color: #FF9800;
+  font-size: 65px;
+  font-family: 'Cabin';
+}
+
+p{
+  color: #212121;
+}
+
+form{
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+}
+
+h2 {
+  font-family: 'Roboto Condensed';
+  font-size: 24px;
+}
+
+.create-edit-beer{
+  background-color: #00BCD4;
+  color: #212121;
+}
+
+.profile-display{
+  font-family: 'Raleway';
+}
+
+h3 {
+  font-size: 24px;
+}
+
+#signUpSignIn {
+  color: #FFFFFF;
+}
+
+.navbar{
+  background-color: #0097A7;
+  font-family: 'Raleway';
+  font-size: 24px;
+}
+
+.btn {
+    background-color: #0097A7;
 }
 
 .add-beer-button {
@@ -20,18 +76,41 @@ h1 {
   width: 100%;
 }
 
+li {
+  list-style-type: none;
+}
+
 .rightNavButton{
-  border-style: none;
   background-color: white;
+  border-style: none;
   text-align: center;
 }
 
 #create-beers-button {
-  margin-left: 300px;
-  margin-top: -100px;
+  margin-left: 260px;
+  margin-top: -120px;
 }
 
 .beer-display{
   margin: 0 auto;
   width: 80%;
+}
+
+#create-my-profile{
+  width: 60%;
+  margin: 0 auto;
+}
+
+#edit-my-profile-form{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-control{
+  margin: 10px 0;
+}
+
+.beerImage {
+  max-width: 200px;
+  padding: 5px;
 }

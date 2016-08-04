@@ -22,10 +22,6 @@ const createMyProfile = (data) => {
 };
 
 const showMyProfile = () => {
-  console.log('user is ', app.user);
-  console.log('usertoken is ', app.userToken);
-  console.log('profile is ', app.profile);
-
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/profiles/' + app.profile.id,

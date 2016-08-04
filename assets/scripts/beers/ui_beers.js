@@ -1,57 +1,48 @@
 'use strict';
 
 const app = require('../app.js');
-// const displayBeersTemplate = require('./../templates/display_beers.handlebars');
 const beersTemplate = require('./../templates/edit_beer_template.handlebars');
 const displayAllUserBeersTemplate = require('./../templates/display_everyone_beers.handlebars');
 
-
 const createOneBeerSuccess = (data) => {
-  console.log(data);
   app.user.beers = data.beers;
+  $('#welcome').html('');
   $('input[type="text"], textarea').val('');
   $('#handlebars').html('');
   $('#myBeerModal').modal('toggle');
+
 };
 
 const addOtherUserBeerSuccess = (data) => {
-  console.log(data);
   app.user.beers = data.beers;
-  // $('input[type="text"], textarea').val('');
+  $('#myBeerModal').modal('toggle');
   $('#handlebars').html('');
-  // $('#myBeerModal').modal('toggle');
+  $('#welcome').html('');
 };
 
 const showOneBeerSuccess = (data) => {
-  console.log("beer data ", data);
+  $('#welcome').html('');
   $('#myBeerModal').modal('toggle');
   $('.beer-modal-body').html(beersTemplate(data));
 };
 
 const showUserBeersSuccess = (data) => {
-  console.log(data);
-  // $('#handlebars').html(displayBeersTemplate(data));
-
-  // $('#handlebars').html(displayBeersTemplate());
+  $('#welcome').html('');
+  $('#sortable').sortable();
 };
 
 const deleteBeerSuccess = () => {
-  // console.log('Bucket deleted successfully');
-  console.log(app);
-  //  app.user.beers.id = null;
+
 };
 
 const editBeerSuccess = (data) => {
-  // $(".modal-fullscreen.update-bucket").modal('hide');
   $('#myBeerModal').modal('toggle');
-
 };
 
 const showAllUserBeersSuccess = (data) => {
-  console.log('user beers ', data);
+  $('#welcome').html('');
   $('#handlebars').html(displayAllUserBeersTemplate(data));
-}
-
+};
 
 module.exports = {
   createOneBeerSuccess,

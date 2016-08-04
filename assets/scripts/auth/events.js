@@ -4,12 +4,10 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const api = require('./api');
 const ui = require('./ui');
-const apiBeers = require('../beers/api_beers.js');
-const uiBeers = require('../beers/ui_beers.js');
 const eventsProfiles = require('../profiles/events_profiles.js');
-const apiProfiles = require('../profiles/api_profiles.js');
 
-//const app = require('./../app');
+const displayWelcomeTemplate = require('./../templates/welcome.handlebars');
+const displayNewWelcomeTemplate = require('./../templates/new_welcome.handlebars');
 
 const onSignUp = (event) => {
   event.preventDefault();
@@ -25,10 +23,14 @@ const onSignIn = (event) => {
   api.signIn(data)
   .then(ui.signInSuccess)
   .then(api.getUserId)
-  // .then(ui.getUserIdSuccess)
   .then((data) =>{
     if (!data.user.profile) {
+      $('#welcome').html(displayNewWelcomeTemplate());
       eventsProfiles.displayProfileForm();
+    }
+    else {
+      $('#welcome').html(displayWelcomeTemplate(data.user.profile));
+      $('#my-profile').addClass('hidden');
     }
   })
   .catch((error) => {
