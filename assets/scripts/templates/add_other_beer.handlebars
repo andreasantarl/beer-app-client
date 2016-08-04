@@ -1,0 +1,26 @@
+<form class="beer-display" id="add-other-beer-profile"  enctype="multipart/form-data">
+  <fieldset class="form-group">
+    Beer name: <input class="form-control" type="text" name=beers[beer_name] placeholder="Beer name" value="{{beer_name}}" />
+    Brewer: <input class="form-control" type="text" name=beers[company_name] placeholder="Brewer" value="{{company_name}}" />
+    Style: <input class="form-control" type="text" name=beers[beer_style] placeholder="Style" value="{{beer_style}}" />
+    ABV: <input class="form-control" type="text" name=beers[abv] placeholder="ABV(%)" value="{{abv}}" />
+    Notes: <input class="form-control" type="text" name=beers[notes] placeholder="Notes" value="{{notes}}" />
+    Would you drink this again?: <input class="form-control" type="text" name=beers[drink_again] placeholder="Would you drink this again?" value="{{drink_again}}" />
+
+    Appearance: <input class="form-control" type="text" name=beers[appearance] placeholder="Appearance" value="{{appearance}}" />
+    Aroma: <input class="form-control" type="text" name=beers[aroma] placeholder="Aroma" value="{{aroma}}" />
+    Palate: <input class="form-control" type="text" name=beers[palate] placeholder="Palate" value="{{palate}}" />
+    Flavor: <input class="form-control" type="text" name=beers[flavor] placeholder="Flavor" value="{{flavor}}" />
+    <!-- Packaging: <input class="form-control" type="text" name=beers[packaging] placeholder="Packaging" value="{{beer.packaging}}" /> -->
+<!--  DROPDOWN LIST-->
+
+    Photo: <input class="form-control" type="file" name=beers[photo] placeholder="Profile Picture" value="{{photo}}" />
+    <!-- Beer private: <input  class="form-control" type="checkbox" name="beers[make_private]" value="{beer.make_private}" /> -->
+    <!-- <input type="submit"  id="save-profile-button"  class="edit-profile btn btn-default" value="Update"> -->
+    <!-- <button type="submit" class="create-edit-beer btn btn-default">Create A New Beer</button> -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="submit" class="create-edit-beer btn btn-default">Save</button>
+    </div>
+  </fieldset>
+</form>

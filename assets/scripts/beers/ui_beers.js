@@ -1,7 +1,6 @@
 'use strict';
 
 const app = require('../app.js');
-// const displayBeersTemplate = require('./../templates/display_beers.handlebars');
 const beersTemplate = require('./../templates/edit_beer_template.handlebars');
 const displayAllUserBeersTemplate = require('./../templates/display_everyone_beers.handlebars');
 
@@ -17,43 +16,32 @@ const createOneBeerSuccess = (data) => {
 };
 
 const addOtherUserBeerSuccess = (data) => {
-  // console.log(data);
   app.user.beers = data.beers;
-  // $('input[type="text"], textarea').val('');
+  $('#myBeerModal').modal('toggle');
   $('#handlebars').html('');
   $('#welcome').html('');
-  // $('#myBeerModal').modal('toggle');
 };
 
 const showOneBeerSuccess = (data) => {
-  // console.log("beer data ", data);
   $('#welcome').html('');
   $('#myBeerModal').modal('toggle');
   $('.beer-modal-body').html(beersTemplate(data));
 };
 
 const showUserBeersSuccess = (data) => {
-  // console.log(data);
   $('#welcome').html('');
-  // $('#handlebars').html(displayBeersTemplate(data));
-
-  // $('#handlebars').html(displayBeersTemplate());
 };
 
 const deleteBeerSuccess = () => {
-  // console.log('Bucket deleted successfully');
-  // console.log(app);
-  //  app.user.beers.id = null;
+
 };
 
 const editBeerSuccess = (data) => {
-  // $(".modal-fullscreen.update-bucket").modal('hide');
   $('#myBeerModal').modal('toggle');
 
 };
 
 const showAllUserBeersSuccess = (data) => {
-  // console.log('user beers ', data);
   $('#welcome').html('');
   $('#handlebars').html(displayAllUserBeersTemplate(data));
 };
