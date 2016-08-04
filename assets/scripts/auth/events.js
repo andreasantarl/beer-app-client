@@ -37,6 +37,7 @@ const onSignIn = (event) => {
     }
     else {
       $('#welcome').html(displayWelcomeTemplate(data.user.profile));
+      $('#my-profile').addClass('hidden');
     }
   })
   .catch((error) => {

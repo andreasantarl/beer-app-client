@@ -7,6 +7,7 @@ const profileEditTemplate = require('./../templates/edit_profile_form.handlebars
 
 const createMyProfileSuccess = (data) => {
   app.profile = data.profile;
+  $('#my-profile').addClass('hidden');
 };
 
 const showMyProfileSuccess = (data) => {

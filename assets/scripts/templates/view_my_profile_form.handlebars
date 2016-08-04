@@ -1,11 +1,10 @@
   <div class="profile-display">
-    <h3>
-      {{username}}
-    </h3>
-      <h4>{{first_name}} {{last_name}}</h4>
+      <h3>{{first_name}} {{last_name}}</h3>
+      <p>Username: {{username}}</p>
       <p>Biography: {{biography}}</p>
-      Beer preferences: {{preferences}}
-      Beer favorites: {{favorites}}
+      <p>Beer preferences: {{preferences}}</p>
+      <p>Beer favorites: {{favorites}}</p>
       <input type=hidden value="{{id}}" id="userProfileId"/>
+      <br>
       <input id="edit-profile-button" type="submit" class="edit-profile btn btn-default" value="Update Profile">
   </div>
