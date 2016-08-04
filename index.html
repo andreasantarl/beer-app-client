@@ -15,14 +15,11 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
               <li><button type="button" id="signUpSignIn" class="btn btn-primary btn-lg navButton login-incomplete" data-toggle="modal" data-target="#loginModal">Sign Up/Sign In</button></li>
-            <!-- <li><button id="profileModalbutton" type="button" class="btn btn-default btn-md rightNavButton " data-toggle="modal" data-target="#profileModal">My Profile</button></li> -->
-            <!-- <li><button id="my-profile" type="button" class="btn btn-default btn-md rightNavButton">My Profile</button></li> -->
               <li class="dropdown login-success-nav hidden" id="beers-dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Beers<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><button id="my-beers" type="button" class="rightNavButton">View My Beers</button></li>
                   <li><button id="their-beers" type="button" class="rightNavButton">View Other People's Beers</button></li>
-                  <!-- <li><button id="edit-my-profile" type="button" class="btn btn-default btn-md rightNavButton">Edit My Profile</button></li> -->
                 </ul>
               </li>
               <li class="dropdown login-success-nav hidden" id="profile-dropdown">
@@ -135,10 +132,9 @@
 </div>
 
   <!-- handlebars -->
-<div id='handlebars' class="container text-center">
-  <ul>
+  <ul id='draggable'>
+    <div id='handlebars' class="container text-center"></div>
   </ul>
-</div>
 
   </body>
 </html>

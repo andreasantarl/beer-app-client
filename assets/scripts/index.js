@@ -16,6 +16,7 @@ $(() => {
   authEvents.addHandlers();
   profileEvents.profileHandlers();
   beerEvents.beerHandlers();
+
   // beerEvents.displayUserBeers();
   // $("#create-my-profile").hide();
   // $("#profile-dropdown").hide();

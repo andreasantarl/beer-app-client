@@ -13,6 +13,7 @@ require('./assets/styles/index.scss');
 // attach jQuery globally
 require('expose?$!jquery');
 require('expose?jQuery!jquery');
+require('expose?jQuery-ui!jquery-ui');
 
 // attach getFormFields globally
 

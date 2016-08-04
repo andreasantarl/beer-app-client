@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "dragula": "^3.7.1",
     "jquery": "^2.2.0"
   },
   "devDependencies": {

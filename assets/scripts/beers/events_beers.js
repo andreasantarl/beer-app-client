@@ -5,10 +5,14 @@ const beersCreateTemplate = require('./../templates/create_beer_template.handleb
 const beersEditTemplate = require('./../templates/edit_beer_template.handlebars');
 const displayBeersTemplate = require('./../templates/display_beers.handlebars');
 const addOtherBeerTemplate = require('./../templates/add_other_beer.handlebars');
+const drake = require('dragula');
+
+drake($('#draggable'));
 
 const api = require('./api_beers');
 const ui = require('./ui_beers');
 const app = require('../app.js');
+
 
 const onCreateOneBeer = (event) => {
   event.preventDefault();

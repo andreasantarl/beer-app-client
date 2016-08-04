@@ -4,7 +4,6 @@ const app = require('../app.js');
 const beersTemplate = require('./../templates/edit_beer_template.handlebars');
 const displayAllUserBeersTemplate = require('./../templates/display_everyone_beers.handlebars');
 
-
 const createOneBeerSuccess = (data) => {
   // console.log(data);
   app.user.beers = data.beers;
@@ -30,6 +29,7 @@ const showOneBeerSuccess = (data) => {
 
 const showUserBeersSuccess = (data) => {
   $('#welcome').html('');
+  $('#sortable').sortable();
 };
 
 const deleteBeerSuccess = () => {
