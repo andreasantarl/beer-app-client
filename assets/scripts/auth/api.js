@@ -76,8 +76,6 @@ const changePassword = (data) => {
 };
 
 const getUserId = () => {
-  console.log(app.user.id);
-  console.log('token is ', app.userToken);
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/users/' + app.user.id,
@@ -93,7 +91,6 @@ const getUserId = () => {
       },
     });
   }).then((data) => {
-    console.log("HEEEEEEEYY", data)
     app.profile = data.user.profile;
     return data;
   });
