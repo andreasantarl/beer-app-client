@@ -2,7 +2,6 @@
 //
 const getFormFields = require('../../../lib/get-form-fields');
 const beersCreateTemplate = require('./../templates/create_beer_template.handlebars');
-const beersEditTemplate = require('./../templates/edit_beer_template.handlebars');
 const displayBeersTemplate = require('./../templates/display_beers.handlebars');
 const addOtherBeerTemplate = require('./../templates/add_other_beer.handlebars');
 const drake = require('dragula');
@@ -11,13 +10,10 @@ drake($('#draggable'));
 
 const api = require('./api_beers');
 const ui = require('./ui_beers');
-const app = require('../app.js');
-
 
 const onCreateOneBeer = (event) => {
   event.preventDefault();
   let data = new FormData(event.target);
-  console.log("show FormData ", data);
   api.createOneBeer(data)
   .then(api.addToTriedBeers)
   .then(ui.createOneBeerSuccess)
@@ -48,7 +44,6 @@ const displayBeerForm = (event) => {
 const onEditBeer = (event) => {
   event.preventDefault();
   let id = $(event.target).attr('data-id');
-  console.log(" data id ", id);
   api.showOneBeer(id)  //send buttonID for get request
   .then(ui.showOneBeerSuccess)
   .catch(error => console.error(error));
@@ -97,7 +92,7 @@ const displayOtherUserBeerEdit = (event) => {
   console.log('user beer data ', data);
   $('#myBeerModal').modal('toggle');
   $('.beer-modal-body').html(addOtherBeerTemplate(data.beers));
-}
+};
 
 const beerHandlers = () => {
   $('#create-beers-button').on('click', displayBeerForm);

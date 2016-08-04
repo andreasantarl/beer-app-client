@@ -1,6 +1,8 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url(https://fonts.googleapis.com/css?family=Raleway:700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Cabin);
 
 @font-face {
   font-family: 'Museo Slab';
@@ -9,23 +11,41 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 
 body {
-  background-color: #B2EBF2;
+  background-color: #F0F7F4;
 }
 
 h1 {
   text-align: center;
   color: #FF9800;
   font-size: 65px;
-  font-family: 'Museo Slab';
+  font-family: 'Cabin';
 }
 
 p{
   color: #212121;
 }
 
+form{
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+}
+
+h2 {
+  font-family: 'Roboto Condensed';
+  font-size: 24px;
+}
+
 .create-edit-beer{
   background-color: #00BCD4;
   color: #212121;
+}
+
+.profile-display{
+  font-family: 'Raleway';
+}
+
+h3 {
+  font-size: 24px;
 }
 
 #signUpSignIn {
@@ -36,6 +56,10 @@ p{
   background-color: #0097A7;
   font-family: 'Raleway';
   font-size: 24px;
+}
+
+.btn {
+    background-color: #0097A7;
 }
 
 .add-beer-button {

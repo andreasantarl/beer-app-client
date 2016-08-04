@@ -105,5 +105,4 @@ module.exports = {
   signOut,
   changePassword,
   getUserId,
-  // setProfile,
 };

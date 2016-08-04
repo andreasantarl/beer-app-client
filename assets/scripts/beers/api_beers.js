@@ -3,9 +3,6 @@
 const app = require('../app.js');
 
 const createOneBeer = (data) => {
-  console.log("create beer data ", data);
-  // let fd = new FormData(data);
-  // console.log("form data ", fd);
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/beers',
@@ -27,7 +24,6 @@ const createOneBeer = (data) => {
 };
 
 const addToTriedBeers = (data) => {
-  console.log(data);
   let beer_id = data.beer.id;
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -89,7 +85,6 @@ const showAllUserBeers = () => {
 };
 
 const showOneBeer = (id) => {
-  console.log('id in API ', id);
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/beers/' + id,
@@ -147,7 +142,6 @@ const deleteBeer = (id) => {
 };
 
 const addOtherUserBeer = (data) => {
-  console.log("add other user beer data ", data);
   return new Promise((resolve, reject) => {
     $.ajax({
       url: app.host + '/beers',

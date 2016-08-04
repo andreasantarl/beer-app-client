@@ -18,13 +18,5 @@ $(() => {
   authEvents.addHandlers();
   profileEvents.profileHandlers();
   beerEvents.beerHandlers();
-  // $('#create-beers-button').addClass('disabled');
-
-  // beerEvents.displayUserBeers();
-  // $("#create-my-profile").hide();
-  // $("#profile-dropdown").hide();
-  // $("#view-profile-section").hide();
-  // $("#sign-in-success-nav").hide();
-
   drake();
 });
