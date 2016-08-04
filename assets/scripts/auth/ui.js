@@ -26,6 +26,7 @@ const signInSuccess = () => {
   $("#sign-in-success-nav").show();
   $(".login-incomplete").addClass('hidden');
   $(".login-success-nav").removeClass('hidden');
+  $('#create-beers-button').prop('disabled', false);
   // $('#handlebars').html(displayWelcomeTemplate(data));
 };
 

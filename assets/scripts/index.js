@@ -16,6 +16,7 @@ $(() => {
   authEvents.addHandlers();
   profileEvents.profileHandlers();
   beerEvents.beerHandlers();
+  // $('#create-beers-button').addClass('disabled');
 
   // beerEvents.displayUserBeers();
   // $("#create-my-profile").hide();
