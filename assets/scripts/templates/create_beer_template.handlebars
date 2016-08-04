@@ -1,5 +1,8 @@
 <form class="beer-display" id="beer-profile" data-id="{{beer.id}}" enctype="multipart/form-data">
   <fieldset class="form-group">
+    <!-- Rating: <input type="hidden" class="rating" value="1" data-stop="5" data-step="1" data-filled="glyphicon glyphicon-heart" data-empty="glyphicon glyphicon-heart-empty"/>
+    <br>
+    <span class="glyphicons glyphicons-beer"></span> -->
     Beer name: <input class="form-control" type="text" name=beers[beer_name] placeholder="Beer name" value="{{beer.beer_name}}" />
     Brewer: <input class="form-control" type="text" name=beers[company_name] placeholder="Brewer" value="{{beer.company_name}}" />
     Style: <input class="form-control" type="text" name=beers[beer_style] placeholder="Style" value="{{beer.beer_style}}" />
