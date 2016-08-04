@@ -13,7 +13,7 @@ const onCreateOneBeer = (event) => {
   event.preventDefault();
   // let data = getFormFields(event.target);
   let data = new FormData(event.target);
-  console.log(data);
+  console.log("show FormData ", data);
   api.createOneBeer(data)
   .then(api.addToTriedBeers)
   .then(ui.createOneBeerSuccess)
@@ -89,10 +89,11 @@ const onSaveSomeonesBeer = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
   console.log(data);
-  api.createOneBeer(data)
+  console.log("App data ", app);
+  api.addOtherUserBeer(data)
   .then(api.addToTriedBeers)
-  .then(ui.createOneBeerSuccess)
-  // .then(onShowMyBeers)
+  .then(ui.addOtherUserBeerSuccess)
+  .then(onShowMyBeers)
   .catch(error => console.error(error));
 };
 
@@ -101,9 +102,9 @@ const beerHandlers = () => {
   $('#my-beers').on('click', onShowMyBeers);
   $('body').on('submit', '#edit-beer-profile', saveBeerChanges);
   $('#their-beers').on('click', onShowAllUserBeers);
-  $('body').on('click', '#add-someones-beer', onSaveSomeonesBeer);
+  $('body').on('submit', '#add-someones-beer', onSaveSomeonesBeer);
 
-  // $('#add-someones-beer').on('click', onSaveSomeonesBeer);
+  // $('#add-other-beer').on('click', onSaveSomeonesBeer);
 };
 
 module.exports = {

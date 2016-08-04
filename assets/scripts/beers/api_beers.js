@@ -146,6 +146,26 @@ const deleteBeer = (id) => {
   });
 };
 
+const addOtherUserBeer = (data) => {
+  console.log("add other user beer data ", data);
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: app.host + '/beers',
+      method: "POST",
+      headers: {
+        Authorization: 'Token token=' + app.userToken,
+      },
+      data: data,
+      success: (response) => {
+        resolve(response);
+      },
+      error: (error) => {
+        reject(error);
+      },
+    });
+  });
+};
+
 
 module.exports = {
   createOneBeer,
@@ -155,4 +175,5 @@ module.exports = {
   showOneBeer,
   addToTriedBeers,
   showAllUserBeers,
+  addOtherUserBeer
 };

@@ -14,6 +14,14 @@ const createOneBeerSuccess = (data) => {
   $('#myBeerModal').modal('toggle');
 };
 
+const addOtherUserBeerSuccess = (data) => {
+  console.log(data);
+  app.user.beers = data.beers;
+  // $('input[type="text"], textarea').val('');
+  $('#handlebars').html('');
+  // $('#myBeerModal').modal('toggle');
+};
+
 const showOneBeerSuccess = (data) => {
   console.log("beer data ", data);
   $('#myBeerModal').modal('toggle');
@@ -52,4 +60,5 @@ module.exports = {
   editBeerSuccess,
   showOneBeerSuccess,
   showAllUserBeersSuccess,
+  addOtherUserBeerSuccess
 };
