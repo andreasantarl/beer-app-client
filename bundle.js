@@ -309,7 +309,7 @@ webpackJsonp([0],[
 
 	var app = {
 	  // host: 'http://localhost:3000',
-	  host: 'http://beerbracket.herokuapp.com/'
+	  host: 'https://beerbracket.herokuapp.com/'
 	};
 
 	module.exports = app;
