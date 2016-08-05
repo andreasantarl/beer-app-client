@@ -455,7 +455,7 @@ webpackJsonp([0],[
 	    + "\" />\n    Biography: <input class=\"form-control\" type=\"text\" name=profiles[biography] placeholder=\"Biography\" value=\""
 	    + alias4(((helper = (helper = helpers.biography || (depth0 != null ? depth0.biography : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"biography","hash":{},"data":data}) : helper)))
 	    + "\" />\n    Beer preferences: <input class=\"form-control\" type=\"text\" name=profiles[preferences] placeholder=\"Beer preferences\" value=\""
-	    + alias4(((helper = (helper = helpers.preference || (depth0 != null ? depth0.preference : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"preference","hash":{},"data":data}) : helper)))
+	    + alias4(((helper = (helper = helpers.preferences || (depth0 != null ? depth0.preferences : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"preferences","hash":{},"data":data}) : helper)))
 	    + "\" />\n    Beer favorites: <input class=\"form-control\" type=\"text\" name=profiles[favorites] placeholder=\"Beer favorites\" value=\""
 	    + alias4(((helper = (helper = helpers.favorites || (depth0 != null ? depth0.favorites : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"favorites","hash":{},"data":data}) : helper)))
 	    + "\" />\n    <!-- Photo: <input class=\"form-control\" type=\"file\" name=profiles[photo] placeholder=\"Profile Picture\" value=\""
@@ -1763,7 +1763,7 @@ webpackJsonp([0],[
 	    + "</p>\n      <p>Biography: "
 	    + alias4(((helper = (helper = helpers.biography || (depth0 != null ? depth0.biography : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"biography","hash":{},"data":data}) : helper)))
 	    + "</p>\n      <p>Beer preferences: "
-	    + alias4(((helper = (helper = helpers.preference || (depth0 != null ? depth0.preference : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"preference","hash":{},"data":data}) : helper)))
+	    + alias4(((helper = (helper = helpers.preferences || (depth0 != null ? depth0.preferences : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"preferences","hash":{},"data":data}) : helper)))
 	    + "</p>\n      <p>Beer favorites: "
 	    + alias4(((helper = (helper = helpers.favorites || (depth0 != null ? depth0.favorites : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"favorites","hash":{},"data":data}) : helper)))
 	    + "</p>\n      <input type=hidden value=\""
@@ -1789,7 +1789,7 @@ webpackJsonp([0],[
 	    + "\" />\n        Biography: <input class=\"form-control\" type=\"text\" name=profiles[biography] placeholder=\"Biography\" value=\""
 	    + alias4(((helper = (helper = helpers.biography || (depth0 != null ? depth0.biography : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"biography","hash":{},"data":data}) : helper)))
 	    + "\" />\n        Beer preferences: <input class=\"form-control\" type=\"text\" name=profiles[preferences] placeholder=\"Beer preferences\" value=\""
-	    + alias4(((helper = (helper = helpers.preference || (depth0 != null ? depth0.preference : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"preference","hash":{},"data":data}) : helper)))
+	    + alias4(((helper = (helper = helpers.preferences || (depth0 != null ? depth0.preferences : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"preferences","hash":{},"data":data}) : helper)))
 	    + "\" />\n        Beer favorites: <input class=\"form-control\" type=\"text\" name=profiles[favorites] placeholder=\"Beer favorites\" value=\""
 	    + alias4(((helper = (helper = helpers.favorites || (depth0 != null ? depth0.favorites : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"favorites","hash":{},"data":data}) : helper)))
 	    + "\" />\n        <!-- Photo: <input class=\"form-control\" type=\"file\" name=profiles[photo] placeholder=\"Profile Picture\" value=\""
