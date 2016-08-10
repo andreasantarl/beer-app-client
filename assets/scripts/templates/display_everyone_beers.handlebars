@@ -6,10 +6,12 @@
       <h4>{{beer_name}}</h4>
       <img src="{{photo}}" height="190px" class="beerImage">
       <form class="beer-display" id="add-someones-beer" enctype="multipart/form-data">
-        <fieldset class="form-group">
+        <fieldset class="form-group-1">
           <input class="form-control hidden" type="text" name=beers[beer_name] value="{{beer_name}}"/>
           <input class="form-control hidden" type="file" name=beers[photo] value="{{photo}}"/>
-          <button type="submit" class="add-other-beer btn btn-default">Beer me.</button>
+          <div class="add-other-beer-container">
+            <button type="submit" class="add-other-beer btn btn-default">Beer me.</button>
+          </div>
         </fieldset>
       </form>
     <!-- <form class="beer-display hidden" id="add-someones-beer" enctype="multipart/form-data">

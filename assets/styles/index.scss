@@ -106,6 +106,19 @@ p {
   font-size: 18px;
 }
 
+.add-other-beer-container {
+  left: -2%;
+  margin: 0 auto;
+  position: absolute;
+  top: 250px;
+  width: 100%;
+}
+
+.add-other-beer {
+  box-shadow: 2px 2px $dark-grey;
+  font-size: 18px;
+}
+
 .create-edit-beer {
   background-color: $sky;
   color: #212121;
@@ -130,9 +143,11 @@ li {
   list-style-type: none;
 }
 
-.rightNavButton {
+.rightNavButton,
+.sign-out {
   background-color: $white;
   border-style: none;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -162,6 +177,6 @@ li {
 
 .beerImage {
   box-shadow: 1px 1px 2px $dark-grey, 0 0 25px $light-grey, 0 0 5px $medium-grey;
-  max-height: 160px;
+  max-height: 150px;
   padding: 5px;
 }
