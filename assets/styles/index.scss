@@ -17,6 +17,7 @@ $medium-grey: #a9a9a9;
 $light-grey: #efefef;
 $sky: #caebf2;
 $white: #fff;
+$medium-blue: #4c4cdc;
 
 body {
   background-color: $light-grey;
@@ -84,7 +85,7 @@ p {
 }
 
 .well {
-  box-shadow: 1px 1px 2px $dark-grey, 0 0 25px $dark-blue, 0 0 5px $medium-grey;
+  box-shadow: 1px 1px 2px $dark-blue, 0 0 25px $medium-grey, 0 0 5px $medium-blue;
   height: 300px;
   margin: 10px;
 }
@@ -120,7 +121,7 @@ p {
 }
 
 .create-edit-beer {
-  background-color: $sky;
+  background-color: $medium-blue;
   color: #212121;
 }
 
@@ -128,6 +129,11 @@ p {
   font-family: 'Raleway';
   margin: 0 auto;
   width: 50%;
+}
+
+#create-beers-button {
+  margin-left: 260px;
+  margin-top: -140px;
 }
 
 .add-beer-button {
@@ -149,11 +155,6 @@ li {
   border-style: none;
   font-size: 20px;
   text-align: center;
-}
-
-#create-beers-button {
-  margin-left: 260px;
-  margin-top: -120px;
 }
 
 .beer-display {
