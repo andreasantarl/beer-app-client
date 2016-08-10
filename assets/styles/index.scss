@@ -9,23 +9,51 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   src: url('./museoslab_500_macroman/Museo_slab_500_2-webfont.ttf');
 }
 
+$beige: #dde0d8;
+$slate: #324554;
+// $slate: #4c4d5f;
+$dark-grey: #717580;
+$medium-grey: #a9a9a9;
+$light-grey: #efefef;
+$sky: #caebf2;
+$white: #fff;
 
 body {
-  background-color:  #E0FFFF;
+  background-color: $light-grey;
 }
 
-h1 {
-  text-align: center;
-  color: #FF9800;
-  font-size: 65px;
-  font-family: 'Cabin';
+.logo {
+  margin: 0 auto;
+  width: 40%;
 }
 
-p{
-  color: #212121;
+.login-incomplete {
+  color: $slate;
 }
 
-form{
+.navbar {
+  background-color: $white;
+  font-family: 'Raleway';
+  font-size: 24px;
+}
+
+.btn {
+  background-color: $medium-grey;
+}
+
+.btn:hover {
+  background-color: $dark-grey;
+}
+
+.btn:active {
+  background-color: $dark-grey;
+}
+
+p {
+  color: $slate;
+}
+
+form {
   font-family: 'Roboto Condensed';
   font-size: 20px;
 }
@@ -35,43 +63,30 @@ h2 {
   font-size: 24px;
 }
 
-.create-edit-beer{
-  background-color: #00BCD4;
-  color: #212121;
-}
-
-.profile-display{
-  font-family: 'Raleway';
-}
-
 h3 {
   font-size: 24px;
 }
 
-#signUpSignIn {
-  color: #FFFFFF;
+.well {
+  box-shadow: 1px 1px 2px $dark-grey, 0 0 25px $sky, 0 0 5px $medium-grey;
+  height: 300px;
+  margin: 10px;
 }
 
-.navbar{
-  background-color: #0097A7;
+.create-edit-beer {
+  background-color: $sky;
+  color: #212121;
+}
+
+.profile-display {
   font-family: 'Raleway';
-  font-size: 24px;
-}
-
-.btn {
-    background-color: #0097A7;
 }
 
 .add-beer-button {
-  width: 75px;
+  width: 65px;
 }
 
-.well {
-  margin: 10px;
-  height: 300px;
-}
-
-#handlebars {
+.handlebars-container {
   margin: 0 auto;
   width: 100%;
 }
@@ -80,8 +95,8 @@ li {
   list-style-type: none;
 }
 
-.rightNavButton{
-  background-color: white;
+.rightNavButton {
+  background-color: $white;
   border-style: none;
   text-align: center;
 }
@@ -91,22 +106,22 @@ li {
   margin-top: -120px;
 }
 
-.beer-display{
+.beer-display {
   margin: 0 auto;
   width: 80%;
 }
 
-#create-my-profile{
+#create-my-profile {
   width: 60%;
   margin: 0 auto;
 }
 
-#edit-my-profile-form{
-  width: 60%;
+#edit-my-profile-form {
   margin: 0 auto;
+  width: 60%;
 }
 
-.form-control{
+.form-control {
   margin: 10px 0;
 }
 
