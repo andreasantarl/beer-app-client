@@ -23,7 +23,7 @@ body {
 }
 
 .logo {
-  margin: 0 auto;
+  margin: 20px auto 10px auto;
   width: 40%;
 }
 
@@ -49,10 +49,6 @@ body {
   background-color: $dark-grey;
 }
 
-p {
-  color: $slate;
-}
-
 form {
   font-family: 'Roboto Condensed';
   font-size: 20px;
@@ -60,11 +56,17 @@ form {
 
 h2 {
   font-family: 'Roboto Condensed';
-  font-size: 24px;
+  font-size: 36px;
 }
 
 h3 {
+  font-size: 32px;
+}
+
+p {
+  color: $slate;
   font-size: 24px;
+  line-height: 150%;
 }
 
 .well {
@@ -97,6 +99,8 @@ h3 {
 
 .profile-display {
   font-family: 'Raleway';
+  margin: 0 auto;
+  width: 50%;
 }
 
 .add-beer-button {
@@ -130,12 +134,12 @@ li {
 
 #create-my-profile {
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
 }
 
 #edit-my-profile-form {
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
 }
 
 .form-control {
