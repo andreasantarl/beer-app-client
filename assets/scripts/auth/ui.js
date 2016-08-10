@@ -6,6 +6,7 @@ $("#sign-out").hide();
 $("#changePasswordModalbutton").hide();
 $("#profileModalbutton").hide();
 $("#my-profile").hide();
+$('#create-beers-button').hide();
 
 const success = (data) => {
   $('#sign-up-message').text("Thank you for creating an account!  Please now sign in.");
@@ -21,7 +22,9 @@ const signInSuccess = () => {
   $("#sign-in-success-nav").show();
   $(".login-incomplete").addClass('hidden');
   $(".login-success-nav").removeClass('hidden');
+  $('#create-beers-button').show();
   $('#create-beers-button').prop('disabled', false);
+  $('#homepage').hide();
 };
 
 const signOutSuccess = () => {
@@ -40,6 +43,8 @@ const signOutSuccess = () => {
   $(".login-incomplete").removeClass('hidden');
   $(".login-success-nav").addClass('hidden');
   $('#create-beers-button').prop('disabled', true);
+  $('#create-beers-button').hide();
+  $('#homepage').show();
 };
 
 const changePasswordSuccess = () => {
