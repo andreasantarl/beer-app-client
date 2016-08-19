@@ -89,7 +89,7 @@ const onSaveSomeonesBeer = (event) => {
 const displayOtherUserBeerEdit = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log('user beer data ', data);
+  // console.log('user beer data ', data);
   $('#myBeerModal').modal('toggle');
   $('.beer-modal-body').html(addOtherBeerTemplate(data.beers));
 };
@@ -97,7 +97,9 @@ const displayOtherUserBeerEdit = (event) => {
 const onDisplayOneBeerInfo = (event) => {
   event.preventDefault();
   let id = $(event.target).attr('data-id');
-  console.log("hello!");
+  api.showOneBeer(id)  //send buttonID for get request
+  .then(ui.showThisBeerInfoSuccess)
+  .catch(error => console.error(error));
 }
 
 
