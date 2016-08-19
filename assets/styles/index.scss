@@ -91,6 +91,10 @@ p {
   margin: 10px;
 }
 
+.well:hover {
+  background-color: $medium-grey;
+}
+
 .beerEditDeleteButtons {
   margin: 0 auto;
   position: absolute;
