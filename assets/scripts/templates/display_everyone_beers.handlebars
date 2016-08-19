@@ -8,6 +8,9 @@
       <form class="beer-display" id="add-someones-beer" enctype="multipart/form-data">
         <fieldset class="form-group-1">
           <input class="form-control hidden" type="text" name=beers[beer_name] value="{{beer_name}}"/>
+          <input class="form-control hidden" type="text" name=beers[company_name] value="{{company_name}}"/>
+          <input class="form-control hidden" type="text" name=beers[beer_style] value="{{beer_style}}"/>
+          <input class="form-control hidden" type="text" name=beers[abv] value="{{abv}}"/>
           <input class="form-control hidden" type="file" name=beers[photo] value="{{photo}}"/>
           <div class="add-other-beer-container">
             <button type="submit" class="add-other-beer btn btn-default">Beer me.</button>
