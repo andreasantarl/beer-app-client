@@ -94,6 +94,13 @@ const displayOtherUserBeerEdit = (event) => {
   $('.beer-modal-body').html(addOtherBeerTemplate(data.beers));
 };
 
+const onDisplayOneBeerInfo = (event) => {
+  event.preventDefault();
+  let id = $(event.target).attr('data-id');
+  console.log("hello!");
+}
+
+
 const beerHandlers = () => {
   $('#create-beers-button').on('click', displayBeerForm);
   $('#my-beers').on('click', onShowMyBeers);
@@ -101,6 +108,7 @@ const beerHandlers = () => {
   $('#their-beers').on('click', onShowAllUserBeers);
   $('body').on('submit', '#add-someones-beer', displayOtherUserBeerEdit);
   $('body').on('submit', '#add-other-beer-profile', onSaveSomeonesBeer);
+  $('body').on('click', '.beerImage', onDisplayOneBeerInfo);
 };
 
 module.exports = {
