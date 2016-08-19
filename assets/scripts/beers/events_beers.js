@@ -110,7 +110,7 @@ const beerHandlers = () => {
   $('#their-beers').on('click', onShowAllUserBeers);
   $('body').on('submit', '#add-someones-beer', displayOtherUserBeerEdit);
   $('body').on('submit', '#add-other-beer-profile', onSaveSomeonesBeer);
-  $('body').on('click', '.beerImage', onDisplayOneBeerInfo);
+  $('body').on('click', '.myBeers', onDisplayOneBeerInfo);
 };
 
 module.exports = {
