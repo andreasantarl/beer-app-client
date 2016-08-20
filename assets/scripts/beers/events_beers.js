@@ -135,7 +135,7 @@ const bubbleSort = (data, sort) => {
   // console.log(beers[1].beer_name);
     for (let i = 0; i < beers.length; i++) {
       for (let j = 0; j < (beers.length - i - 1); j++) {
-        if (beers[j].beer_name > beers[j + 1].beer_name){
+        if (beers[j].beer_name.toUpperCase() > beers[j + 1].beer_name.toUpperCase()){
           tmp = beers[j];
           beers[j] = beers[j + 1];
           beers[j + 1] = tmp;
@@ -145,7 +145,7 @@ const bubbleSort = (data, sort) => {
   } else if (sort === "company_name"){
     for (let i = 0; i < beers.length; i++) {
       for (let j = 0; j < (beers.length - i - 1); j++) {
-        if (beers[j].company_name > beers[j + 1].company_name){
+        if (beers[j].company_name.toUpperCase() > beers[j + 1].company_name.toUpperCase()){
           tmp = beers[j];
           beers[j] = beers[j + 1];
           beers[j + 1] = tmp;
@@ -155,7 +155,7 @@ const bubbleSort = (data, sort) => {
   } else if (sort === "beer_style") {
     for (let i = 0; i < beers.length; i++) {
         for (let j = 0; j < (beers.length - i - 1); j++) {
-          if (beers[j].beer_style > beers[j + 1].beer_style){
+          if (beers[j].beer_style.toUpperCase() > beers[j + 1].beer_style.toUpperCase()){
             tmp = beers[j];
             beers[j] = beers[j + 1];
             beers[j + 1] = tmp;
