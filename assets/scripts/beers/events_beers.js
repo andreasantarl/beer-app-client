@@ -28,10 +28,6 @@ const onShowMyBeers = () => {
       $('#welcome').html('');
       $('#handlebars').html(displayBeersTemplate(data));
     })
-    .then(() => {
-      $('.delete-beer-button').on('click', onDeleteBeer);
-      $('.edit-beer-button').on('click', onEditBeer);
-    })
     .catch(error => console.error(error));
 };
 
@@ -101,7 +97,51 @@ const onDisplayOneBeerInfo = (event) => {
   api.showOneBeer(id)  //send buttonID for get request
   .then(ui.showThisBeerInfoSuccess)
   .catch(error => console.error(error));
-}
+};
+
+const onSortMyBeers = (event) => {
+  event.preventDefault();
+  let element = document.getElementById("sort-by");
+  let sort = element.options[element.selectedIndex].value;
+  return api.showUserBeers()
+    .then((data) => {
+      // let array = [];
+      // array.push(data);
+      // sortFunction(data);
+      bubbleSort(data);
+      console.log(data);
+      // $('#create-beers-button').show();
+      // $('#welcome').html('');
+      $('#handlebars').html(displayBeersTemplate(data));
+    })
+    .catch(error => console.error(error));
+
+};
+//
+// const sortFunction = (data) => {
+//   data.sort(function(a,b) {
+//        if ( a.beer_name < b.beer_name )
+//          return -1;
+//        if ( a.beer_name > b.beer_name )
+//          return 1;
+//        return 0;
+//    } );
+// };
+const bubbleSort = (data) => {
+  let beers = data.beers;
+  let tmp;
+  console.log(beers[1].beer_name);
+  for (let i = 0; i < beers.length; i++) {
+    for (let j = 0; j < (beers.length - i - 1); j++) {
+      if (beers[j].beer_name > beers[j + 1].beer_name){
+        tmp = beers[j];
+        beers[j] = beers[j + 1];
+        beers[j + 1] = tmp;
+      }
+    }
+  }
+  return tmp;
+};
 
 
 const beerHandlers = () => {
@@ -112,6 +152,9 @@ const beerHandlers = () => {
   $('body').on('submit', '#add-someones-beer', displayOtherUserBeerEdit);
   $('body').on('submit', '#add-other-beer-profile', onSaveSomeonesBeer);
   $('body').on('click', '.myBeers', onDisplayOneBeerInfo);
+  $('body').on('click', '.sort-display', onSortMyBeers);
+  $('body').on('click', '.delete-beer-button', onDeleteBeer);
+  $('body').on('click', '.edit-beer-button', onEditBeer);
 };
 
 module.exports = {
