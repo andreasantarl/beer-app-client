@@ -4,6 +4,8 @@ const getFormFields = require('../../../lib/get-form-fields');
 const beersCreateTemplate = require('./../templates/create_beer_template.handlebars');
 const displayBeersTemplate = require('./../templates/display_beers.handlebars');
 const addOtherBeerTemplate = require('./../templates/add_other_beer.handlebars');
+const displayAllUserBeersTemplate = require('./../templates/display_everyone_beers.handlebars');
+
 const drake = require('dragula');
 
 drake($('#draggable'));
@@ -112,6 +114,19 @@ const onSortMyBeers = (event) => {
     .catch(error => console.error(error));
 };
 
+const onSortTheirBeers = (event) => {
+  event.preventDefault();
+  let element = document.getElementById("sort-by");
+  let sort = element.options[element.selectedIndex].value;
+  api.showAllUserBeers()
+    .then((data) => {
+      console.log(sort);
+      bubbleSort(data, sort);
+      $('#handlebars').html(displayAllUserBeersTemplate(data));
+    })
+    .catch(error => console.error(error));
+};
+
 const bubbleSort = (data, sort) => {
   console.log("Bubble ", sort);
   let beers = data.beers;
@@ -171,6 +186,7 @@ const beerHandlers = () => {
   $('body').on('submit', '#add-other-beer-profile', onSaveSomeonesBeer);
   $('body').on('click', '.myBeers', onDisplayOneBeerInfo);
   $('body').on('click', '.sort-display', onSortMyBeers);
+  $('body').on('click', '.sort-display-everyone', onSortTheirBeers);
   $('body').on('click', '.delete-beer-button', onDeleteBeer);
   $('body').on('click', '.edit-beer-button', onEditBeer);
 };
