@@ -103,43 +103,61 @@ const onSortMyBeers = (event) => {
   event.preventDefault();
   let element = document.getElementById("sort-by");
   let sort = element.options[element.selectedIndex].value;
-  return api.showUserBeers()
+  api.showUserBeers()
     .then((data) => {
-      // let array = [];
-      // array.push(data);
-      // sortFunction(data);
-      bubbleSort(data);
-      console.log(data);
-      // $('#create-beers-button').show();
-      // $('#welcome').html('');
+      console.log(sort);
+      bubbleSort(data, sort);
       $('#handlebars').html(displayBeersTemplate(data));
     })
     .catch(error => console.error(error));
-
 };
-//
-// const sortFunction = (data) => {
-//   data.sort(function(a,b) {
-//        if ( a.beer_name < b.beer_name )
-//          return -1;
-//        if ( a.beer_name > b.beer_name )
-//          return 1;
-//        return 0;
-//    } );
-// };
-const bubbleSort = (data) => {
+
+const bubbleSort = (data, sort) => {
+  console.log("Bubble ", sort);
   let beers = data.beers;
   let tmp;
-  console.log(beers[1].beer_name);
-  for (let i = 0; i < beers.length; i++) {
-    for (let j = 0; j < (beers.length - i - 1); j++) {
-      if (beers[j].beer_name > beers[j + 1].beer_name){
-        tmp = beers[j];
-        beers[j] = beers[j + 1];
-        beers[j + 1] = tmp;
+  if (sort === "beer_name") {
+  // console.log(beers[1].beer_name);
+    for (let i = 0; i < beers.length; i++) {
+      for (let j = 0; j < (beers.length - i - 1); j++) {
+        if (beers[j].beer_name > beers[j + 1].beer_name){
+          tmp = beers[j];
+          beers[j] = beers[j + 1];
+          beers[j + 1] = tmp;
+        }
       }
     }
-  }
+  } else if (sort === "company_name"){
+    for (let i = 0; i < beers.length; i++) {
+      for (let j = 0; j < (beers.length - i - 1); j++) {
+        if (beers[j].company_name > beers[j + 1].company_name){
+          tmp = beers[j];
+          beers[j] = beers[j + 1];
+          beers[j + 1] = tmp;
+        }
+      }
+    }
+  } else if (sort === "beer_style") {
+    for (let i = 0; i < beers.length; i++) {
+        for (let j = 0; j < (beers.length - i - 1); j++) {
+          if (beers[j].beer_style > beers[j + 1].beer_style){
+            tmp = beers[j];
+            beers[j] = beers[j + 1];
+            beers[j + 1] = tmp;
+          }
+        }
+      }
+    } else if (sort === "abv") {
+      for (let i = 0; i < beers.length; i++) {
+        for (let j = 0; j < (beers.length - i - 1); j++) {
+          if (parseFloat(beers[j].abv) > parseFloat(beers[j + 1].abv)){
+            tmp = beers[j];
+            beers[j] = beers[j + 1];
+            beers[j + 1] = tmp;
+          }
+        }
+      }
+    }
   return tmp;
 };
 
