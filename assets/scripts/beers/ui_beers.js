@@ -41,6 +41,7 @@ const editBeerSuccess = (data) => {
 };
 
 const showAllUserBeersSuccess = (data) => {
+  $('#create-beers-button').hide();
   $('#welcome').html('');
   $('#handlebars').html(displayAllUserBeersTemplate(data));
 };

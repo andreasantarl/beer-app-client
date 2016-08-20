@@ -24,6 +24,7 @@ const onCreateOneBeer = (event) => {
 const onShowMyBeers = () => {
   return api.showUserBeers()
     .then((data) => {
+      $('#create-beers-button').show();
       $('#welcome').html('');
       $('#handlebars').html(displayBeersTemplate(data));
     })
