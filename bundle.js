@@ -3563,17 +3563,17 @@ webpackJsonp([0],[
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.beer : depth0)) != null ? stack1.beer_style : stack1), depth0))
 	    + "\" />\n    ABV: <input class=\"form-control\" type=\"numeric\" name=beers[abv] placeholder=\"ABV(%)\" value=\""
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.beer : depth0)) != null ? stack1.abv : stack1), depth0))
-	    + "\" />\n    Notes: <textarea class=\"form-control\" type=\"textarea\" name=beers[notes] placeholder=\"Notes\" value=\""
+	    + "\" />\n    Notes: <input class=\"form-control\" type=\"textarea\" name=beers[notes] placeholder=\"Notes\" value=\""
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.beer : depth0)) != null ? stack1.notes : stack1), depth0))
-	    + "\" /></textarea>\n    Appearance: <textarea class=\"form-control\" type=\"textarea\" name=beers[appearance] placeholder=\"Appearance\" value=\""
+	    + "\" />\n    Appearance: <input class=\"form-control\" type=\"textarea\" name=beers[appearance] placeholder=\"Appearance\" value=\""
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.beer : depth0)) != null ? stack1.appearance : stack1), depth0))
-	    + "\" /></textarea>\n    Aroma: <textarea class=\"form-control\" type=\"textarea\" name=beers[aroma] placeholder=\"Aroma\" value=\""
+	    + "\" />\n    Aroma: <input class=\"form-control\" type=\"textarea\" name=beers[aroma] placeholder=\"Aroma\" value=\""
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.beer : depth0)) != null ? stack1.aroma : stack1), depth0))
-	    + "\" /></textarea>\n    Palate: <textarea class=\"form-control\" type=\"textarea\" name=beers[palate] placeholder=\"Palate\" value=\""
+	    + "\" />\n    Palate: <input class=\"form-control\" type=\"textarea\" name=beers[palate] placeholder=\"Palate\" value=\""
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.beer : depth0)) != null ? stack1.palate : stack1), depth0))
-	    + "\" /></textarea>\n    Flavor: <textarea class=\"form-control\" type=\"textarea\" name=beers[flavor] placeholder=\"Flavor\" value=\""
+	    + "\" />\n    Flavor: <input class=\"form-control\" type=\"textarea\" name=beers[flavor] placeholder=\"Flavor\" value=\""
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.beer : depth0)) != null ? stack1.flavor : stack1), depth0))
-	    + "\" /></textarea>\n    Photo: <input class=\"form-control\" type=\"file\" name=beers[photo] placeholder=\"Profile Picture\" value=\""
+	    + "\" />\n    Photo: <input class=\"form-control\" type=\"file\" name=beers[photo] placeholder=\"Profile Picture\" value=\""
 	    + alias2(alias1(((stack1 = (depth0 != null ? depth0.beer : depth0)) != null ? stack1.photo : stack1), depth0))
 	    + "\" />\n    <div class=\"modal-footer\">\n      <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n      <button type=\"submit\" class=\"create-edit-beer btn btn-default\">Save</button>\n    </div>\n  </fieldset>\n</form>\n";
 	},"useData":true});
