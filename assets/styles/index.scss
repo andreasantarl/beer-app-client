@@ -194,10 +194,13 @@ li {
 .beerImage {
   background-color: $white;
   box-shadow: 1px 1px 2px $dark-grey, 0 0 25px $light-grey, 0 0 5px $medium-grey;
-  cursor: pointer;
   max-height: 150px;
   max-width: 150px;
   padding: 5px;
+}
+
+.myBeers {
+  cursor: pointer;
 }
 
 .sort-display-section {
