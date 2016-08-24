@@ -88,7 +88,6 @@ const onSaveSomeonesBeer = (event) => {
 const displayOtherUserBeerEdit = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  // console.log('user beer data ', data);
   $('#myBeerModal').modal('toggle');
   $('.beer-modal-body').html(addOtherBeerTemplate(data.beers));
 };
@@ -107,7 +106,6 @@ const onSortMyBeers = (event) => {
   let sort = element.options[element.selectedIndex].value;
   api.showUserBeers()
     .then((data) => {
-      console.log(sort);
       bubbleSort(data, sort);
       $('#handlebars').html(displayBeersTemplate(data));
     })
@@ -120,7 +118,6 @@ const onSortTheirBeers = (event) => {
   let sort = element.options[element.selectedIndex].value;
   api.showAllUserBeers()
     .then((data) => {
-      console.log(sort);
       bubbleSort(data, sort);
       $('#handlebars').html(displayAllUserBeersTemplate(data));
     })
@@ -128,11 +125,9 @@ const onSortTheirBeers = (event) => {
 };
 
 const bubbleSort = (data, sort) => {
-  console.log("Bubble ", sort);
   let beers = data.beers;
   let tmp;
   if (sort === "beer_name") {
-  // console.log(beers[1].beer_name);
     for (let i = 0; i < beers.length; i++) {
       for (let j = 0; j < (beers.length - i - 1); j++) {
         if (beers[j].beer_name.toUpperCase() > beers[j + 1].beer_name.toUpperCase()){

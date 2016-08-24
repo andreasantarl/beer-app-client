@@ -47,7 +47,6 @@ const showAllUserBeersSuccess = (data) => {
 };
 
 const showThisBeerInfoSuccess = (data) => {
-  console.log(data);
   $('#welcome').html('');
   $('#view-my-beer-info').modal('toggle');
   $('.view-beer-modal-body').html(oneBeerTemplate(data.beer));
