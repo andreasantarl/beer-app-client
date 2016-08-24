@@ -1915,7 +1915,6 @@ webpackJsonp([0],[
 	var displayOtherUserBeerEdit = function displayOtherUserBeerEdit(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  // console.log('user beer data ', data);
 	  $('#myBeerModal').modal('toggle');
 	  $('.beer-modal-body').html(addOtherBeerTemplate(data.beers));
 	};
@@ -1934,7 +1933,6 @@ webpackJsonp([0],[
 	  var element = document.getElementById("sort-by");
 	  var sort = element.options[element.selectedIndex].value;
 	  api.showUserBeers().then(function (data) {
-	    console.log(sort);
 	    bubbleSort(data, sort);
 	    $('#handlebars').html(displayBeersTemplate(data));
 	  }).catch(function (error) {
@@ -1947,7 +1945,6 @@ webpackJsonp([0],[
 	  var element = document.getElementById("sort-by");
 	  var sort = element.options[element.selectedIndex].value;
 	  api.showAllUserBeers().then(function (data) {
-	    console.log(sort);
 	    bubbleSort(data, sort);
 	    $('#handlebars').html(displayAllUserBeersTemplate(data));
 	  }).catch(function (error) {
@@ -1956,11 +1953,9 @@ webpackJsonp([0],[
 	};
 
 	var bubbleSort = function bubbleSort(data, sort) {
-	  console.log("Bubble ", sort);
 	  var beers = data.beers;
 	  var tmp = void 0;
 	  if (sort === "beer_name") {
-	    // console.log(beers[1].beer_name);
 	    for (var i = 0; i < beers.length; i++) {
 	      for (var j = 0; j < beers.length - i - 1; j++) {
 	        if (beers[j].beer_name.toUpperCase() > beers[j + 1].beer_name.toUpperCase()) {
@@ -3526,7 +3521,6 @@ webpackJsonp([0],[
 	};
 
 	var showThisBeerInfoSuccess = function showThisBeerInfoSuccess(data) {
-	  console.log(data);
 	  $('#welcome').html('');
 	  $('#view-my-beer-info').modal('toggle');
 	  $('.view-beer-modal-body').html(oneBeerTemplate(data.beer));
